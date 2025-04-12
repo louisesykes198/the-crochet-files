@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import CrochetItem
 
-def index(request):
-    return HttpResponse("Welcome to my app")
+class   CrochetList(generic.ListView):
+    model = CrochetItem
