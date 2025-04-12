@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['crochet-files-84195481b131.herokuapp.com', '127.0.0.1']
 
@@ -62,7 +62,9 @@ ROOT_URLCONF = 'crochetcrafts.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           'DIRS': [
+            BASE_DIR / 'templates',  # optional: add global templates folder
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
