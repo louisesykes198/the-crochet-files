@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Projects</title>
+</head>
+
+<body>
+    <h1>My Crochet Projects</h1>
+
+    {% for item in object_list %}
+        <div>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+            <p><strong>Made by:</strong> {{ item.author }}</p>
+            <p><strong>Status:</strong> 
+                {% if item.status == 1 %}
+                    Published
+                {% else %}
+                    Draft
+                {% endif %}
+            </p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>No crochet items found.</p>
+    {% endfor %}
+    
+</body>
+
+</html>
+
