@@ -28,7 +28,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar --> 
+        <!-- Navbar --> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">     
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    The Crochet Nook
+                </a>      
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a>Add Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a>Crochet Projects</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <!-- Show logout only if user is logged in -->
+                            <li class="nav-item">
+                                <form action="">
+                                    {% csrf_token %}
+                                    <button type="submit" class="nav-link btn btn-link" style="display: inline-block; border: none; background: none; cursor: pointer; line-height: normal;">
+                                        Logout
+                                    </button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <!-- Show login/register if user is NOT logged in -->
+                            <li class="nav-item">
+                                <a>Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a>Register</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>               
     
                         <!-- Show login/register if user is NOT logged in -->
                  
