@@ -1,8 +1,9 @@
+# crochet_app/urls.py
 from django.urls import path
-from .views import project_list
+from . import views
 
 urlpatterns = [
-    path('', project_list, name='project_list'),
+    path('', views.home, name='home'),  # Add more URL patterns as needed
 ]
 
 
