@@ -4,5 +4,5 @@ from .models import CrochetItem
 
 class   CrochetList(generic.ListView):
     model = CrochetItem
-    template_name = "CrochetItem/index.html"
+    template_name = "crochet_app/index.html"
     paginate_by = 6

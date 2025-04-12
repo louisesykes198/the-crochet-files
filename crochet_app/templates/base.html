@@ -1,8 +1,9 @@
+{% load static %}
 {% url 'home' as home_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
-{% load static %}
+
 <head>
     <title>CodeStar Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,12 +49,14 @@
             </div>
         </div>
     </nav>
-
+    <h1>Test Heading</h1>
     <main class="flex-shrink-0 main-bg">
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+        <p class="m-0 text-center text-white">
+            {% block copyright %}
+                Made by Code Instituters
+            {% endblock copyright %}
+        </p>
 
     </main>
 
