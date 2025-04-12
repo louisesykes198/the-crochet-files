@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Project(models.Model):
     CATEGORY_CHOICES = [
@@ -31,6 +32,17 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Comment(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="comments")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)  # Optional: Track when the comment was created
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Comment by {self.user.username} on {self.project.name}"
+
 
 #STATUS = ((0, "Draft"), (1, "Published"))
 

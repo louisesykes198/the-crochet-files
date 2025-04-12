@@ -3,7 +3,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Add more URL patterns as needed
+    path('', views.home, name='home'),
+      # URL to view a project and its comments
+    path('project/<int:project_id>/', views.project_detail, name='project_detail'),
+
+    # URL to add a comment to a project
+    path('project/<int:project_id>/comment/', views.add_comment, name='add_comment'),# Add more URL patterns as needed
+    path('project/<int:project_id>/', views.project_detail, name='project_detail'),
 ]
 
 

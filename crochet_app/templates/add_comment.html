@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Comment on {{ project.name }}</h1>
+
+    <form method="POST" action="{% url 'add_comment' project_id=project.id %}">
+        {% csrf_token %}
+        <textarea name="comment" required></textarea><br>
+        <button type="submit">Submit Comment</button>
+    </form>
+{% endblock %}

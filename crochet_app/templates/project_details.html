@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ project.name }}</title>
+</head>
+<body>
+    <h1>{{ project.name }}</h1>
+    <p><strong>Category:</strong> {{ project.category }}</p>
+    <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
+    <p><strong>Description:</strong> {{ project.description }}</p>
+    
+    <!-- Optional: Display the image if available -->
+    {% if project.image %}
+        <img src="{{ project.image.url }}" alt="{{ project.name }}">
+    {% endif %}
+    
+    <!-- Optional: Display any available notes -->
+    {% if project.notes %}
+        <p><strong>Notes:</strong> {{ project.notes }}</p>
+    {% endif %}
+    
+    <h2>Materials Needed:</h2>
+    <p>{{ project.materials_needed }}</p>
+
+    <h3>Comments:</h3>
+    <ul>
+        {% for comment in project.comments.all %}
+            <li><strong>{{ comment.user.username }}:</strong> {{ comment.comment }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
