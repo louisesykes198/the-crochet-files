@@ -5,11 +5,12 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
       # URL to view a project and its comments
-    path('project/<int:project_id>/', views.project_detail, name='project_detail'),
+    path('project/<int:project_id>/comment/', views.add_comment, name='add_comment'),
 
     # URL to add a comment to a project
-    path('project/<int:project_id>/comment/', views.add_comment, name='add_comment'),# Add more URL patterns as needed
     path('project/<int:project_id>/', views.project_detail, name='project_detail'),
+    
+    path('project/<int:project_id>/like/', views.toggle_like, name='toggle_like'),
 ]
 
 

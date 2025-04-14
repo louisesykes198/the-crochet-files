@@ -42,6 +42,18 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.project.name}"
+    
+    # Like model to track project likes
+class Like(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="likes")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('project', 'user')  # Prevents duplicate likes
+
+    def __str__(self):
+        return f"Like by {self.user.username} on {self.project.name}"
+
 
 
 #STATUS = ((0, "Draft"), (1, "Published"))

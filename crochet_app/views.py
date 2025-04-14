@@ -1,6 +1,6 @@
 # views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Project, Comment
+from .models import Project, Comment, Like
 
 def home(request):
     return render(request, 'home.html') 
@@ -36,6 +36,22 @@ def add_comment(request, project_id):
             return redirect('project_detail', project_id=project.id)  # Redirect back to project details
 
     return render(request, 'crochet_app/add_comment.html', {'project': project})
+
+# Project Detail view (likes and comments handling)
+def project_detail(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+
+    from .models import Project, Like
+
+def toggle_like(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    like, created = Like.objects.get_or_create(user=request.user, project=project)
+
+    if not created:
+        # If the like already exists, unlike it
+        like.delete()
+
+    return redirect('project_detail', project_id=project_id)
 
 
 
