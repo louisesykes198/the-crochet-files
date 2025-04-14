@@ -15,6 +15,9 @@ urlpatterns = [
     
     # project form
     path('project/new/', views.create_project, name='create_project'),
+    
+    path('patterns/', views.pattern_list, name='pattern_list'),
+    path('patterns/<int:pk>/', views.pattern_detail, name='pattern_detail'),
 ]
 
 

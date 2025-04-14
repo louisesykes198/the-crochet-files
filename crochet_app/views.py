@@ -1,6 +1,6 @@
 # views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Project, Comment, Like
+from .models import Project, Comment, Like, Pattern
 from .forms import ProjectForm
 
 def home(request):
@@ -66,6 +66,15 @@ def create_project(request):
     else:
         form = ProjectForm()
     return render(request, 'your_template_folder/form.html', {'form': form})
+
+def pattern_list(request):
+    patterns = Pattern.objects.all()
+    return render(request, 'crochet_app/pattern_list.html', {'patterns': patterns})
+
+def pattern_detail(request, pk):
+    pattern = get_object_or_404(Pattern, pk=pk)
+    return render(request, 'crochet_app/pattern_detail.html', {'pattern': pattern})
+
 
 
 

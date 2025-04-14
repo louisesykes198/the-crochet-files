@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Comment, Like
+from .models import Project, Comment, Like, Pattern
 
 admin.site.register(Comment)
 
@@ -11,6 +11,11 @@ class LikeAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'skill_level')
+    search_fields = ('name', 'description')
+
+@admin.register(Pattern)
+class PatternAdmin(admin.ModelAdmin):
+    list_display = ('name', 'short_description')
     search_fields = ('name', 'description')
 
 

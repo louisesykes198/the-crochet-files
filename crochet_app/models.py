@@ -54,6 +54,18 @@ class Like(models.Model):
     def __str__(self):
         return f"Like by {self.user.username} on {self.project.name}"
 
+class Pattern(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+    def short_description(self):
+        return self.description[:50] + "..." if len(self.description) > 50 else self.description
+
+
+
 
 
 #STATUS = ((0, "Draft"), (1, "Published"))
