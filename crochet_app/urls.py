@@ -4,6 +4,8 @@ from . import views
 from .views import CustomLoginView
 from .views import register
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -31,7 +33,7 @@ urlpatterns = [
     path('projects/<int:pk>/edit/', views.edit_project, name='edit_project'),
     path('projects/', views.project_list, name='project_list'),
     path('add/', views.add_project, name='add_project'),
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 #from django.urls import path

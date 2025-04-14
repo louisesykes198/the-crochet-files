@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class Project(models.Model):
+    # Choices for category
     CATEGORY_CHOICES = [
         ('Blankets', 'Blankets'),
         ('Cardigans', 'Cardigans'),
@@ -12,23 +13,35 @@ class Project(models.Model):
         ('Dishcloths', 'Dishcloths'),
     ]
 
+    # Choices for skill level
     SKILL_LEVEL_CHOICES = [
         ('Beginner', 'Beginner'),
         ('Intermediate', 'Intermediate'),
         ('Advanced', 'Advanced'),
     ]
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=255)
     description = models.TextField()
-    skill_level = models.CharField(max_length=50, choices=SKILL_LEVEL_CHOICES, default='Beginner')
+    
+    # Use the choices for category and skill_level
+    category = models.CharField(
+        max_length=100,
+        choices=CATEGORY_CHOICES,  # Apply the category choices
+    )
+    skill_level = models.CharField(
+        max_length=50,
+        choices=SKILL_LEVEL_CHOICES,  # Apply the skill level choices
+    )
+    
     materials_needed = models.TextField()
-    notes = models.TextField(blank=True, null=True, default='')
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-    image = models.ImageField(upload_to='projects/images/', blank=True)
-    pattern = models.FileField(upload_to='projects/patterns/', null=True, blank=True)
-
-    class Meta:
-        verbose_name_plural = "Projects"
+    notes = models.TextField()
+    
+    # Image and pattern fields
+    image = models.ImageField(upload_to='projects/images/', blank=True, null=True)
+    pattern = models.FileField(upload_to='projects/patterns/', blank=True, null=True)
+    
+    # ForeignKey relation with the user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

@@ -143,13 +143,21 @@ def edit_project(request, pk):
 
 def add_project(request):
     if request.method == 'POST':
-        form = ProjectForm(request.POST, request.FILES)
+        form = ProjectForm(request.POST, request.FILES)  # Include request.FILES for image/file uploads
         if form.is_valid():
-            form.save()
-            return redirect('project_list')  # Redirect to the project list view after saving
+            # Set the user to the current logged-in user
+            project = form.save(commit=False)
+            project.user = request.user
+            project.save()
+            return redirect('project_list')  # Redirect to the project list page after saving
     else:
-        form = ProjectForm()  # Empty form for GET request
+        form = ProjectForm()
+    
     return render(request, 'add_project.html', {'form': form})
+
+def project_list(request):
+    projects = Project.objects.all()
+    return render(request, 'project_list.html', {'projects': projects})
 
 
 
