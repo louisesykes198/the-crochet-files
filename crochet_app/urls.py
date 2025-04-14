@@ -1,6 +1,7 @@
 # crochet_app/urls.py
 from django.urls import path
 from . import views
+from .views import CustomLoginView
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -18,6 +19,8 @@ urlpatterns = [
     
     path('patterns/', views.pattern_list, name='pattern_list'),
     path('patterns/<int:pk>/', views.pattern_detail, name='pattern_detail'),
+    
+    path('login/', CustomLoginView.as_view(), name='login'),
 ]
 
 

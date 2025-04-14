@@ -2,6 +2,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Comment, Like, Pattern
 from .forms import ProjectForm
+from django.contrib.auth.views import LoginView
+
 
 def home(request):
     return render(request, 'home.html') 
@@ -74,6 +76,9 @@ def pattern_list(request):
 def pattern_detail(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     return render(request, 'crochet_app/pattern_detail.html', {'pattern': pattern})
+
+class CustomLoginView(LoginView):
+    template_name = 'your_custom_path/login.html'
 
 
 
