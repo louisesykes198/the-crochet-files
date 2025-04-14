@@ -1,6 +1,7 @@
 # views.py
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Comment, Like
+from .forms import ProjectForm
 
 def home(request):
     return render(request, 'home.html') 
@@ -52,6 +53,19 @@ def toggle_like(request, project_id):
         like.delete()
 
     return redirect('project_detail', project_id=project_id)
+
+def create_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            # Optionally assign user, timestamps, etc.
+            # project.user = request.user
+            project.save()
+            return redirect('project_detail', project_id=project.id)
+    else:
+        form = ProjectForm()
+    return render(request, 'your_template_folder/form.html', {'form': form})
 
 
 

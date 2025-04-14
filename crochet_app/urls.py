@@ -10,7 +10,11 @@ urlpatterns = [
     # URL to add a comment to a project
     path('project/<int:project_id>/', views.project_detail, name='project_detail'),
     
+    # Like Button
     path('project/<int:project_id>/like/', views.toggle_like, name='toggle_like'),
+    
+    # project form
+    path('project/new/', views.create_project, name='create_project'),
 ]
 
 
