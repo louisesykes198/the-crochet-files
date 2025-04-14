@@ -2,6 +2,7 @@
 from django.urls import path
 from . import views
 from .views import CustomLoginView
+from .views import register
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('patterns/<int:pk>/', views.pattern_detail, name='pattern_detail'),
     
     path('login/', CustomLoginView.as_view(), name='login'),
+    
+    path('register/', register, name='register'),
 ]
 
 

@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Comment, Like, Pattern
 from .forms import ProjectForm
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import login
+from .forms import CustomUserCreationForm
 
 
 def home(request):
@@ -79,6 +81,17 @@ def pattern_detail(request, pk):
 
 class CustomLoginView(LoginView):
     template_name = 'your_custom_path/login.html'
+    
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Auto-login after registering
+            return redirect('home')  # or whatever page you want
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
 
 
 

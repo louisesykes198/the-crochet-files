@@ -2,7 +2,9 @@ from django import forms
 from .models import Project
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
-from PIL import Image  # ✅ Ensures actual image validation
+from PIL import Image  
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class ProjectForm(forms.ModelForm):
     class Meta:
@@ -44,3 +46,10 @@ class ProjectForm(forms.ModelForm):
             except Exception:
                 raise ValidationError('Invalid image file.')
         return image
+    
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
