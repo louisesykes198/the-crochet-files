@@ -6,10 +6,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('crochet_app.urls')),
-    path('accounts/', include('django.contrib.auth.urls')), 
-    path('', include('crochet_app.urls')),
-    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', include('crochet_app.urls')),  # Only include this once
+    path('accounts/', include('django.contrib.auth.urls')),  # For login, logout, and password reset
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files during development
+
 
 
 #rom django.contrib import admin

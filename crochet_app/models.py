@@ -21,9 +21,7 @@ class Project(models.Model):
     ]
 
     name = models.CharField(max_length=255)
-    description = models.TextField()
-    
-    # Use the choices for category and skill_level
+    description = models.TextField(blank=True, null=True)  # Optional description
     category = models.CharField(
         max_length=100,
         choices=CATEGORY_CHOICES,  # Apply the category choices
@@ -32,20 +30,24 @@ class Project(models.Model):
         max_length=50,
         choices=SKILL_LEVEL_CHOICES,  # Apply the skill level choices
     )
-    
     materials_needed = models.TextField()
-    notes = models.TextField()
-    
+    notes = models.TextField(blank=True, null=True)  # Optional notes
+
     # Image and pattern fields
     image = models.ImageField(upload_to='projects/images/', blank=True, null=True)
     pattern = models.FileField(upload_to='projects/patterns/', blank=True, null=True)
-    
+
     # ForeignKey relation with the user
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    likes = models.ManyToManyField(User, related_name='liked_projects', blank=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
-    
+
+
 class Comment(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -55,17 +57,18 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.project.name}"
-    
-    # Like model to track project likes
+
+
 class Like(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="likes")
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='likes_set')  # Custom related_name
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     class Meta:
         unique_together = ('project', 'user')  # Prevents duplicate likes
 
     def __str__(self):
         return f"Like by {self.user.username} on {self.project.name}"
+
 
 class Pattern(models.Model):
     name = models.CharField(max_length=255)
@@ -76,6 +79,7 @@ class Pattern(models.Model):
 
     def short_description(self):
         return self.description[:50] + "..." if len(self.description) > 50 else self.description
+
 
 
 
