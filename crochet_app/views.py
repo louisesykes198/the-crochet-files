@@ -5,6 +5,7 @@ from .forms import ProjectForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -43,10 +44,17 @@ def add_comment(request, project_id):
     return render(request, 'crochet_app/add_comment.html', {'project': project})
 
 # Project Detail view (likes and comments handling)
-def project_detail(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
+def project_detail(request, id):
+    # Fetch the project from the database
+    project = get_object_or_404(Project, id=id)
+    
+    # Assuming you have a way to handle "likes"
+    likes = project.likes_count()  # You can implement the likes_count() method if you haven't yet
 
-    from .models import Project, Like
+    return render(request, 'project_detail.html', {
+        'project': project,
+        'likes': likes
+    })
 
 def toggle_like(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
@@ -92,6 +100,56 @@ def register(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
+def update_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect('project_list')  # or wherever you want to go after update
+    else:
+        form = ProjectForm(instance=project)
+
+    return render(request, 'update_project.html', {'form': form, 'project': project})
+
+@login_required
+def update_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect('project_list')
+    else:
+        form = ProjectForm(instance=project)
+
+    return render(request, 'update_project.html', {'form': form, 'project': project})
+
+@login_required
+def edit_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect('project_detail', pk=project.pk)
+    else:
+        form = ProjectForm(instance=project)
+
+    return render(request, 'crochet_app/edit_project.html', {'form': form, 'project': project})
+
+def add_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('project_list')  # Redirect to the project list view after saving
+    else:
+        form = ProjectForm()  # Empty form for GET request
+    return render(request, 'add_project.html', {'form': form})
 
 
 

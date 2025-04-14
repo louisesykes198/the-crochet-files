@@ -3,6 +3,7 @@ from django.urls import path
 from . import views
 from .views import CustomLoginView
 from .views import register
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -24,6 +25,12 @@ urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     
     path('register/', register, name='register'),
+    
+    path('projects/<int:pk>/edit/', views.update_project, name='update_project'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('projects/<int:pk>/edit/', views.edit_project, name='edit_project'),
+    path('projects/', views.project_list, name='project_list'),
+    path('add/', views.add_project, name='add_project'),
 ]
 
 

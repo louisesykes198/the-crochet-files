@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">     
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    The Crochet Nook
+                    The Crochet Files
                 </a>      
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,13 +40,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a>Home</a>
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a>Add Project</a>
+                            <a class="nav-link" href="{% url 'add_project' %}">Add Project</a>
                         </li>
                         <li class="nav-item">
-                            <a>Crochet Projects</a>
+                            <a class="nav-link" href="{% url 'project_list' %}">Crochet Projects</a>
                         </li>
                         {% if user.is_authenticated %}
                             <!-- Show logout only if user is logged in -->
@@ -67,6 +67,15 @@
                                 <a>Register</a>
                             </li>
                         {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add_project' %}">Add Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'project_list' %}">Crochet Projects</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -84,15 +93,14 @@
     <!-- Bootstrap JS for responsive navigation -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <footer class="footer">
-            <footer class="footer mt-auto py-3 dark-bg">
-            <p class="m-0 text-center text-white">&copy; 2025 CrochetCrafts. All rights reserved.</p>
-            <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-                <i class="fab fa-twitter-square ms-3"></i>
-                <i class="fab fa-instagram-square ms-3"></i>
-                <i class="fab fa-youtube-square ms-3"></i>
-            </p>
-        </footer>
-    </footer>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <p class="m-0 text-center text-white">&copy; 2025 CrochetCrafts. All rights reserved.</p>
+        <p class="m-0 text-center text-white">Follow us: 
+            <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i>
+        </p>
+    </footer>   
 </body>
 </html>
