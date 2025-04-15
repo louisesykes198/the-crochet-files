@@ -38,7 +38,7 @@ class Project(models.Model):
     pattern = models.FileField(upload_to='projects/patterns/', blank=True, null=True)
 
     # ForeignKey relation with the user
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     
     likes = models.ManyToManyField(User, related_name='liked_projects', blank=True)
     
