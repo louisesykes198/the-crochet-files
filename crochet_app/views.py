@@ -165,6 +165,10 @@ def category_view(request, category_name):
     projects = Project.objects.filter(category__iexact=category_name)
     return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
 
+def project_detail(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
+    return render(request, 'crochet_app/project_detail.html', {'project': project})
+
 
 
 
