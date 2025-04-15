@@ -155,6 +155,11 @@ def toggle_like(request, project_id):
         project.likes.add(request.user)
     return redirect('project_detail', project_id=project.id)
 
+def delete_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+    project.delete()
+    return redirect('project_list')
+
 
 
 
