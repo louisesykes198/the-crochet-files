@@ -40,19 +40,18 @@ def add_project(request):
 
 # Edit Project view
 @login_required
-def edit_project(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
+def edit_project(request, pk):  # Ensure this matches the 'pk' argument
+    project = get_object_or_404(Project, pk=pk)
+    
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
-            messages.success(request, "Project updated successfully!")
-            return redirect('project_list')
-        else:
-            messages.error(request, "There was an error with your form submission.")
+            return redirect('project_list')  # Replace 'project_list' with your URL name
     else:
         form = ProjectForm(instance=project)
-    return render(request, 'edit_project.html', {'form': form, 'project': project})
+
+    return render(request, 'crochet_app/edit_project.html', {'form': form, 'project': project})
 
 # Delete Project view
 @login_required
