@@ -40,9 +40,8 @@ def add_project(request):
 
 # Edit Project view
 @login_required
-def edit_project(request, pk):  # Ensure this matches the 'pk' argument
+def edit_project(request, pk):
     project = get_object_or_404(Project, pk=pk)
-    
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
@@ -119,19 +118,19 @@ def project_detail(request, project_id):
                 messages.error(request, "Comment cannot be empty.")
     comments = Comment.objects.filter(project=project)
     likes = Like.objects.filter(project=project).count()
-    return render(request, 'project_detail.html', {
+    return render(request, 'crochet_app/project_detail.html', {
         'project': project,
         'comments': comments,
         'likes': likes
     })
-    
-class CustomLoginView(LoginView):
-    template_name = 'login.html' 
-    
-def add_comment(request, project_id):
-    # Get the project to which the comment is being added
-    project = get_object_or_404(Project, id=project_id)
 
+# CustomLoginView for Login
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+
+# Add Comment view
+def add_comment(request, project_id):
+    project = get_object_or_404(Project, id=project_id)
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -145,41 +144,11 @@ def add_comment(request, project_id):
 
     return render(request, 'add_comment.html', {'form': form, 'project': project})
 
+# Toggle Like view
 def toggle_like(request, project_id):
     project = get_object_or_404(Project, id=project_id)
-    # Logic to toggle like on the project
     if project.likes.filter(id=request.user.id).exists():
         project.likes.remove(request.user)
     else:
         project.likes.add(request.user)
     return redirect('project_detail', project_id=project.id)
-
-def delete_project(request, pk):
-    project = get_object_or_404(Project, pk=pk)
-    project.delete()
-    return redirect('project_list')
-
-def category_view(request, category_name):
-    # Filter projects by category
-    projects = Project.objects.filter(category__iexact=category_name)
-    return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
-
-def project_detail(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
-    return render(request, 'crochet_app/project_detail.html', {'project': project})
-
-
-
-
-
-
-
-
-#from django.shortcuts import render
-#from django.views import generic
-#from .models import CrochetItem
-
-#class   CrochetList(generic.ListView):
-    #model = CrochetItem
-    #template_name = "crochet_app/index.html"
-    #paginate_by = 6
