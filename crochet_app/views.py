@@ -160,6 +160,11 @@ def delete_project(request, pk):
     project.delete()
     return redirect('project_list')
 
+def category_view(request, category_name):
+    # Filter projects by category
+    projects = Project.objects.filter(category__iexact=category_name)
+    return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
+
 
 
 

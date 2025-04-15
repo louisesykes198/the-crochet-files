@@ -29,6 +29,8 @@ urlpatterns = [
     path('project/<int:project_id>/like/', views.toggle_like, name='toggle_like'),
     
     path('projects/delete/<int:pk>/', views.delete_project, name='delete_project'),
+    
+    path('category/<str:category_name>/', views.category_view, name='category_view'),
 
     # Static files (for media, if used)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
