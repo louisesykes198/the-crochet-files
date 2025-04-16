@@ -11,7 +11,13 @@ from .forms import CommentForm
 
 # Home view
 def home(request):
-    return render(request, 'home.html')
+    try:
+        projects = Project.objects.all()
+    except Exception as e:
+        print("Error in home view:", e)
+        projects = []
+    return render(request, 'home.html', {'projects': projects})
+
 
 # Project List view
 def project_list(request):
