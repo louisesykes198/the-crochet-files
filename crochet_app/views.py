@@ -159,3 +159,11 @@ def toggle_like(request, project_id):
     else:
         project.likes.add(request.user)
     return redirect('project_detail', project_id=project.id)
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
+@login_required
+def my_view(request):
+    return render(request, 'my_template.html')
+

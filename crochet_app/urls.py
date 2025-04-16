@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
-from .views import CustomLoginView
 from .views import register
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     # Home view
@@ -23,7 +23,6 @@ urlpatterns = [
     path('projects/', views.project_list, name='project_list'),
 
     # User Authentication
-    path('login/', CustomLoginView.as_view(), name='login'),
     path('register/', register, name='register'),
     
     path('project/<int:project_id>/like/', views.toggle_like, name='toggle_like'),
@@ -31,6 +30,8 @@ urlpatterns = [
     path('projects/delete/<int:pk>/', views.delete_project, name='delete_project'),
     
     path('category/<str:category_name>/', views.category_view, name='category_view'),
+    
+    path('accounts/login/', LoginView.as_view(), name='login'),
 
     # Static files (for media, if used)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
