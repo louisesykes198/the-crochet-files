@@ -19,9 +19,10 @@ def project_list(request):
     return render(request, 'crochet_app/project_list.html', {'projects': projects})
 
 # Category view (projects based on category)
-def category_view(request, category):
-    projects = Project.objects.filter(category=category)
-    return render(request, 'category.html', {"category": category, "projects": projects})
+def category_view(request, category_name):
+    projects = Project.objects.filter(category__iexact=category_name)
+    return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
+
 
 # Add Project view
 @login_required
