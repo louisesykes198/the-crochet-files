@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 class Project(models.Model):
     # Choices for category
@@ -79,6 +80,15 @@ class Pattern(models.Model):
 
     def short_description(self):
         return self.description[:50] + "..." if len(self.description) > 50 else self.description
+    
+class Post(models.Model):
+    # …
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
+    featured_image = CloudinaryField('image', default='placeholder')
+    content = models.TextField()
+    # …
 
 
     
