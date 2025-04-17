@@ -118,7 +118,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (for uploaded images)
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://res.cloudinary.com/your_cloud_name/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files storage
