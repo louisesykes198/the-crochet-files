@@ -90,8 +90,9 @@ class Post(models.Model):
     content = models.TextField()
     # …
 
-class MyPhoto(models.Model):
-    image = models.ImageField(upload_to='photos/')
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='projects/')  # This gets saved in Cloudinary
 
     
 
