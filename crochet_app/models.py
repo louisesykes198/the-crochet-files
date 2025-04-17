@@ -82,7 +82,7 @@ class Pattern(models.Model):
         return self.description[:50] + "..." if len(self.description) > 50 else self.description
     
 class Post(models.Model):
-    # …
+    # … Your other fields for Post model
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
@@ -90,9 +90,6 @@ class Post(models.Model):
     content = models.TextField()
     # …
 
-class Project(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='projects/')  # This gets saved in Cloudinary
 
     
 
