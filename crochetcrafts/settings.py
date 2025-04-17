@@ -3,6 +3,9 @@ import os
 import dj_database_url
 import logging
 import environ
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -100,6 +103,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dprjwdfdq',
+    'API_KEY': '231743462944282',
+    'API_SECRET': 'MGGYM1LQSh4AZjUtMYuDrHvz8kU',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'

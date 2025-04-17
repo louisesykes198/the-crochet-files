@@ -90,6 +90,8 @@ class Post(models.Model):
     content = models.TextField()
     # …
 
+class MyPhoto(models.Model):
+    image = models.ImageField(upload_to='photos/')
 
     
 
