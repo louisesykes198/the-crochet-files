@@ -35,7 +35,7 @@ class Project(models.Model):
     notes = models.TextField(blank=True, null=True)  
 
     # Image and pattern fields
-    image = models.ImageField(upload_to='projects/images/', blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True)
     pattern = models.FileField(upload_to='projects/patterns/', blank=True, null=True)
 
     # ForeignKey relation with the user

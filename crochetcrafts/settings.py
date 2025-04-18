@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
     'django_summernote',
+    'cloudinary_storage',
     'cloudinary',
     'crochet_app',
 ]
