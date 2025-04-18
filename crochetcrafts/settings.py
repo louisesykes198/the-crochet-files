@@ -28,10 +28,8 @@ print("DEBUG is:", DEBUG)
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'crochet-files-84195481b131.herokuapp.com',  # Heroku production URL
+    'crochet-files-84195481b131.herokuapp.com',  
 ]
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -127,7 +125,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Security Settings
 if not DEBUG:
-    # Production-specific settings (for Heroku/production)
+    
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -146,9 +144,9 @@ if not DEBUG:
     }
 else:
     # Local Development-specific settings
-    SECURE_SSL_REDIRECT = False  # Don't force HTTPS in development
-    SESSION_COOKIE_SECURE = False  # Local dev cookies can be non-secure
-    CSRF_COOKIE_SECURE = False  # Local dev CSRF cookies can be non-secure
+    SECURE_SSL_REDIRECT = False  
+    SESSION_COOKIE_SECURE = False  
+    CSRF_COOKIE_SECURE = False  
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

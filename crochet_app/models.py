@@ -22,17 +22,17 @@ class Project(models.Model):
     ]
 
     name = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)  # Optional description
+    description = models.TextField(blank=True, null=True)  
     category = models.CharField(
         max_length=100,
-        choices=CATEGORY_CHOICES,  # Apply the category choices
+        choices=CATEGORY_CHOICES,  
     )
     skill_level = models.CharField(
         max_length=50,
-        choices=SKILL_LEVEL_CHOICES,  # Apply the skill level choices
+        choices=SKILL_LEVEL_CHOICES,  
     )
     materials_needed = models.TextField()
-    notes = models.TextField(blank=True, null=True)  # Optional notes
+    notes = models.TextField(blank=True, null=True)  
 
     # Image and pattern fields
     image = models.ImageField(upload_to='projects/images/', blank=True, null=True)
@@ -48,28 +48,26 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-
 class Comment(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now)  # Optional: Track when the comment was created
+    created_at = models.DateTimeField(default=timezone.now)  
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.project.name}"
 
-
 class Like(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='likes_set')  # Custom related_name
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)  
+    created_at = models.DateTimeField(auto_now_add=True)  
 
     class Meta:
-        unique_together = ('project', 'user')  # Prevents duplicate likes
+        unique_together = ('user', 'project')
 
     def __str__(self):
-        return f"Like by {self.user.username} on {self.project.name}"
-
+        return f"Like by {self.user} on {self.project}"
 
 class Pattern(models.Model):
     name = models.CharField(max_length=255)
@@ -88,7 +86,7 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
-    # …
+
 
 
     
