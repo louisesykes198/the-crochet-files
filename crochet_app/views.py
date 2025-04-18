@@ -9,6 +9,20 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from .forms import CommentForm
 
+@login_required
+def create_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = request.user  
+            project.save()
+            return redirect('project_detail', project.id)
+    else:
+        form = ProjectForm()
+    
+    return render(request, 'your_template_name.html', {'form': form})
+
 # Home view
 def home(request):
     try:
@@ -17,7 +31,6 @@ def home(request):
         print("Error in home view:", e)
         projects = []
     return render(request, 'home.html', {'projects': projects})
-
 
 # Project List view
 def project_list(request):
@@ -28,7 +41,6 @@ def project_list(request):
 def category_view(request, category_name):
     projects = Project.objects.filter(category__iexact=category_name)
     return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
-
 
 # Add Project view
 @login_required
@@ -62,12 +74,17 @@ def edit_project(request, pk):
 # Delete Project view
 @login_required
 def delete_project(request, project_id):
-    project = get_object_or_404(Project, pk=project_id)
-    if request.method == 'POST':
+    project = get_object_or_404(Project, id=project_id)
+
+    print(f"Logged-in user: {request.user}")  
+    print(f"Project owner: {project.user}")  
+
+    if project.user == request.user:
         project.delete()
-        messages.success(request, "Project deleted successfully!")
-        return redirect('project_list')
-    return render(request, 'delete_project.html', {'project': project})
+        return redirect('project_list')  
+    else:
+        return HttpResponse("You do not have permission to delete this project.", status=403)
+
 
 # User Registration view
 def register(request):
@@ -166,4 +183,6 @@ from django.shortcuts import render
 @login_required
 def my_view(request):
     return render(request, 'my_template.html')
+
+
 
