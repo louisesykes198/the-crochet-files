@@ -48,7 +48,14 @@ def add_project(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            project = form.save()
+            # Save the form instance but don't commit to the database yet
+            project = form.save(commit=False)
+            # Assign the logged-in user to the project
+            project.user = request.user
+            # Now save the project to the database
+            project.save()
+
+            # Show a success message and redirect to the project list
             messages.success(request, "Project added successfully!")
             return redirect('project_list')
         else:
@@ -56,6 +63,7 @@ def add_project(request):
     else:
         form = ProjectForm()
     return render(request, 'add_project.html', {'form': form})
+
 
 # Edit Project view
 @login_required
