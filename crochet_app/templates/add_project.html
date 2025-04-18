@@ -2,112 +2,136 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2 class="mb-4">Add a New Project</h2>
+    <!-- Add Project Form Card -->
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h2 class="mb-4">Add a New Project</h2>
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <!-- Render form fields manually for more control -->
-        <div class="form-group">
-            <label for="{{ form.name.id_for_label }}">Project Name</label>
-            {{ form.name }}
-            {% if form.name.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.name.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Render form fields manually for more control -->
+                <div class="form-group mb-4">
+                    <label for="{{ form.name.id_for_label }}">Project Name</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
-        </div>
 
-        <div class="form-group">
-            <label for="{{ form.category.id_for_label }}">Category</label>
-            {{ form.category }}
-            {% if form.category.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.category.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
+                <div class="form-group mb-4">
+                    <label for="{{ form.category.id_for_label }}">Category</label>
+                    {{ form.category }}
+                    {% if form.category.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.category.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
-        </div>
 
-        <div class="form-group">
-            <label for="{{ form.skill_level.id_for_label }}">Skill Level</label>
-            {{ form.skill_level }}
-            {% if form.skill_level.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.skill_level.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
+                <div class="form-group mb-4">
+                    <label for="{{ form.skill_level.id_for_label }}">Skill Level</label>
+                    {{ form.skill_level }}
+                    {% if form.skill_level.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.skill_level.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.materials_needed.id_for_label }}">Materials Needed</label>
-            {{ form.materials_needed }}
-            {% if form.materials_needed.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.materials_needed.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.notes.id_for_label }}">Notes</label>
-            {{ form.notes }}
-            {% if form.notes.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.notes.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.pattern.id_for_label }}">Pattern</label>
-            {{ form.pattern }}
-            {% if form.pattern.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.pattern.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="form-group">
-            <label for="{{ form.image.id_for_label }}">Image</label>
-            {{ form.image }}
-            {% if form.image.errors %}
-                <div class="invalid-feedback">
-                    {% for error in form.image.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-success">Save Project</button>
-
-        <!-- Go back button -->
-        <a href="{% url 'project_list' %}" class="btn btn-secondary ms-2">Go Back</a>
-    </form>
-
-    <!-- Display messages (success or error) -->
-    {% if messages %}
-    <div class="alert alert-info mt-4">
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
+   <!-- Description Box -->
+<div class="form-group mb-4">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="form-control" rows="5">
+        {% if form.description.value %}
+            {{ form.description.value }}
+        {% endif %}
+    </textarea>
+    {% if form.description.errors %}
+        <div class="invalid-feedback">
+            {% for error in form.description.errors %}
+                <p>{{ error }}</p>
             {% endfor %}
-        </ul>
-    </div>
+        </div>
     {% endif %}
 </div>
+                <div class="form-group mb-4">
+                    <label for="{{ form.materials_needed.id_for_label }}">Materials Needed</label>
+                    {{ form.materials_needed }}
+                    {% if form.materials_needed.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.materials_needed.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="{{ form.notes.id_for_label }}">Notes</label>
+                    {{ form.notes }}
+                    {% if form.notes.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.notes.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="{{ form.pattern.id_for_label }}">Pattern</label>
+                    {{ form.pattern }}
+                    {% if form.pattern.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.pattern.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.image.id_for_label }}">Project Image</label>
+                    {{ form.image }}
+                    {% if form.image.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.image.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-success">Save Project</button>
+
+                <!-- Go back button -->
+                <a href="{% url 'project_list' %}" class="btn btn-secondary ms-2">Go Back</a>
+            </form>
+
+            <!-- Display messages (success or error) -->
+            {% if messages %}
+            <div class="alert alert-info mt-4">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+
+
+
