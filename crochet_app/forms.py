@@ -19,36 +19,45 @@ class ProjectForm(forms.ModelForm):
             'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         }
 
-    def clean_pattern(self):
-        """Ensure only PDF files are allowed for pattern uploads."""
-        pattern = self.cleaned_data.get('pattern')
-        if pattern:
-            ext_validator = FileExtensionValidator(allowed_extensions=['pdf'])
-            ext_validator(pattern)
-        return pattern
+def clean_pattern(self):
+    pattern = self.cleaned_data.get('pattern')
+
+    if pattern and hasattr(pattern, 'file'):
+        # Optional: Size check
+        if pattern.size > 10 * 1024 * 1024:  # 10MB limit
+            raise ValidationError("Pattern file is too large ( > 10MB ).")
+
+        # Extension check (manual instead of using FileExtensionValidator)
+        if hasattr(pattern, 'name') and not pattern.name.lower().endswith('.pdf'):
+            raise ValidationError("Only PDF files are allowed for pattern uploads.")
+
+    return pattern
 
 def clean_image(self):
-        image = self.cleaned_data.get('image')
-        if image:
-            print(f"Image name: {image.name}")
-            print(f"Image content type: {image.content_type}")
+    image = self.cleaned_data.get('image')
 
-            if image.size > 5 * 1024 * 1024:
-                raise ValidationError("Image file is too large ( > 5MB ). Please upload a smaller image.")
+    # Only validate if it's a freshly uploaded file
+    if image and hasattr(image, 'file'):
+        # Check file size
+        if image.size > 5 * 1024 * 1024:
+            raise ValidationError("Image file is too large ( > 5MB ). Please upload a smaller image.")
 
-            # Validate file extension
-            ext_validator = FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])
-            ext_validator(image)
+        # Check file extension using .name safely
+        if hasattr(image, 'name') and not image.name.lower().endswith(('.jpg', '.jpeg', '.png')):
+            raise ValidationError("Only JPG, JPEG, and PNG files are allowed.")
 
-            # Validate actual image format
-            try:
-                img = Image.open(image)
-                if img.format not in ['JPEG', 'PNG']:
-                    raise ValidationError('Only JPEG and PNG images are allowed.')
-            except Exception as e:
-                raise ValidationError(f'Invalid image file: {e}')
-        
-        return image
+        # Check actual image format
+        try:
+            img = Image.open(image)
+            if img.format.upper() not in ['JPEG', 'PNG']:
+                raise ValidationError('Only JPEG and PNG images are allowed.')
+        except Exception as e:
+            raise ValidationError(f'Invalid image file: {e}')
+
+    # For already-uploaded Cloudinary images, skip validation
+    return image
+    print(f"image type: {type(form.cleaned_data.get('image'))}")
+
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)

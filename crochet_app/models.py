@@ -36,13 +36,11 @@ class Project(models.Model):
 
     # Image and pattern fields
     image = CloudinaryField('image', blank=True, null=True)
-    pattern = models.FileField(upload_to='projects/patterns/', blank=True, null=True)
+    pattern = CloudinaryField('pattern', blank=True, null=True)
 
     # ForeignKey relation with the user
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    
-    likes = models.ManyToManyField(User, related_name='liked_projects', blank=True)
-    
+      
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -60,7 +58,7 @@ class Comment(models.Model):
 
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)  
+    project = models.ForeignKey(Project, on_delete=models.CASCADE,  related_name='likes')  
     created_at = models.DateTimeField(auto_now_add=True)  
 
     class Meta:
