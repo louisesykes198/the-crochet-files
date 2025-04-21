@@ -9,7 +9,7 @@ admin.site.register(Comment)
 class LikeAdmin(admin.ModelAdmin):
     list_display = ('user', 'project', 'created_at')
     ordering = ('user',)
-    search_fields = ('user__username', 'post__title')
+    search_fields = ('user__username', 'project__name')
 
 # Register Project model with customization
 @admin.register(Project)

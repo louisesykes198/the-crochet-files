@@ -46,9 +46,19 @@
                         {% else %}
                             <p><em>Log in to like this project!</em></p>
                         {% endif %}
+                        <p class="mt-2">{{ project.likes.count }} Likes</p>
                     </div>
 
-                    <!-- Delete Button -->
+                    <!-- Edit Button (only for project owner) -->
+                    {% if request.user == project.user %}
+                        <div class="mt-3">
+                            <a href="{% url 'edit_project' project.id %}" class="btn btn-warning">
+                                Edit Project
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <!-- Delete Button (only for project owner) -->
                     {% if request.user == project.user %}
                         <div class="mt-3">
                             <a href="{% url 'delete_project' project.id %}" class="btn btn-danger"
@@ -73,6 +83,7 @@
     </ul>
 </div>
 {% endblock %}
+
 
 
 

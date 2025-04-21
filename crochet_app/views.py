@@ -92,6 +92,9 @@ def delete_project(request, project_id):
         return redirect('project_list')  
     else:
         return HttpResponse("You do not have permission to delete this project.", status=403)
+    
+    print(f"Logged-in user: {request.user}")  
+    print(f"Project owner: {project.user}")
 
 
 # User Registration view
@@ -134,6 +137,7 @@ def user_login(request):
 @login_required
 def project_detail(request, project_id):
     project = get_object_or_404(Project, id=project_id)
+    like_count = project.likes.count()
     if request.method == 'POST':
         if 'like' in request.POST:
             if not Like.objects.filter(project=project, user=request.user).exists():
@@ -177,12 +181,14 @@ def add_comment(request, project_id):
     return render(request, 'add_comment.html', {'form': form, 'project': project})
 
 # Toggle Like view
+@login_required
 def toggle_like(request, project_id):
     project = get_object_or_404(Project, id=project_id)
-    if project.likes.filter(id=request.user.id).exists():
-        project.likes.remove(request.user)
-    else:
-        project.likes.add(request.user)
+    like, created = Like.objects.get_or_create(user=request.user, project=project)
+
+    if not created:
+        # Like already exists — remove it (i.e., unlike)
+        like.delete()
     return redirect('project_detail', project_id=project.id)
 
 from django.contrib.auth.decorators import login_required
