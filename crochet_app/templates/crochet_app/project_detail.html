@@ -28,11 +28,12 @@
                     {% endif %}
 
                     {% if project.pattern %}
-                        <h3>Download Pattern</h3>
-                        <a href="{{ project.pattern.url }}" download class="btn btn-primary">Download Pattern</a>
-                    {% else %}
-                        <p>No pattern available for this project.</p>
-                    {% endif %}
+                    <p>
+                      <a href="{{ project.pattern.url }}" target="_blank">View/Download Pattern</a>
+                    </p>
+                  {% else %}
+                    <p>No pattern uploaded yet.</p>
+                  {% endif %}
 
                     <!-- Like Button -->
                     <div class="mt-3">
