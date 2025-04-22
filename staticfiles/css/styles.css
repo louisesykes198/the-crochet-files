@@ -160,6 +160,86 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border: 4px dashed #c92828; /* pastel pink border */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    background-color: #fffdfd;
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 4px dashed #fae5e5; /* move border to the image itself */
+}
+
+/* Customize the primary button */
+.btn-primary {
+    background-color: #bbd3eb;  /* Light blue background */
+    border-color: #7aa9c2;  /* Slightly darker blue border */
+    color: rgb(19, 18, 18);  /* White text */
+}
+
+.btn-primary:hover {
+    background-color: #7aa9c2;  /* Darker blue on hover */
+    border-color: #5f87a3;
+}
+
+/* Customize the secondary button */
+.btn-secondary {
+    background-color: #f7dfeb;  /* Soft pink background */
+    border-color: #e1a0c4;  /* Slightly darker pink border */
+    color: rgb(19, 18, 18);  /* White text */
+}
+
+.btn-secondary:hover {
+    background-color: #f5d6e7;  /* Darker pink on hover */
+    border-color: #c682a1;
+}
+
+.btn-danger {
+    background-color: #f7b0b0;  /* Soft red background */
+    border-color: #f08f8f;
+    color: rgb(19, 18, 18);
+}
+
+.btn-danger:hover {
+    background-color: #f08f8f;  /* Darker red on hover */
+    border-color: #d57a7a;
+}
+
+/* Add rounded corners to buttons */
+.btn {
+    border-radius: 25px;  /* Rounded corners for buttons */
+}
+
+/* Optional: Add shadow to buttons */
+.btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-warning {
+    background-color: #f7e6a4; /* Lighter yellow background */
+    border-color: #ffb700; /* Slightly darker yellow border */
+    color: rgb(19, 18, 18); /* White text */
+}
+
+.btn-warning:hover {
+    background-color: #ffb700; /* Darker yellow on hover */
+    border-color: #e6a700; /* Darker border on hover */
+}
+
 .footer {
     background-color: rgb(211, 236, 252) !important;
     color: #1a1818 !important;
