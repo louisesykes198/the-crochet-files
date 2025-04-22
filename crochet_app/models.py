@@ -36,7 +36,7 @@ class Project(models.Model):
 
     # Image and pattern fields
     image = CloudinaryField('image', blank=True, null=True)
-    pattern = CloudinaryField('pattern', blank=True, null=True)
+    pattern = CloudinaryField('raw', blank=True, null=True)
 
     # ForeignKey relation with the user
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -70,13 +70,14 @@ class Like(models.Model):
 class Pattern(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    pattern_file = CloudinaryField('pattern_file', resource_type='raw', blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     def short_description(self):
         return self.description[:50] + "..." if len(self.description) > 50 else self.description
-    
+   
 class Post(models.Model):
     # … Your other fields for Post model
     author = models.ForeignKey(

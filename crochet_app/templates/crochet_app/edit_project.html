@@ -1,14 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="mb-4">Edit Project: {{ project.name }}</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Save Changes</button>
-        <a href="{% url 'project_list' %}" class="btn btn-secondary ms-2">Go Back</a>
-    </form>
-</div>
+    <div class="form-group mb-4">
+        <label for="{{ form.name.id_for_label }}">Project Name</label>
+        {{ form.name }}
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="{{ form.category.id_for_label }}">Category</label>
+        {{ form.category }}
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="{{ form.skill_level.id_for_label }}">Skill Level</label>
+        {{ form.skill_level }}
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="{{ form.description.id_for_label }}">Description</label>
+        {{ form.description }}
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="{{ form.materials_needed.id_for_label }}">Materials Needed</label>
+        {{ form.materials_needed }}
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="{{ form.notes.id_for_label }}">Notes</label>
+        {{ form.notes }}
+    </div>
+
+    {% if project.pattern %}
+        <a href="{{ project.pattern.url }}" target="_blank" rel="noopener noreferrer">View Pattern</a>
+        <a href="{{ project.pattern.url }}" download class="btn btn-secondary mt-2">Download Pattern</a>
+    {% endif %}
+
+    <div class="form-group mb-4">
+        <label for="{{ form.image.id_for_label }}">Image</label>
+        {{ form.image }}
+        {% if project.image %}
+            <p>Currently uploaded: <img src="{{ project.image.url }}" alt="Current Image" style="max-width: 150px;"></p>
+        {% endif %}
+    </div>
+
+    <!-- Add Save and Back buttons here -->
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a href="{% url 'project_list' %}" class="btn btn-secondary ms-2">Go Back</a>
+</form>
 {% endblock %}
+
+

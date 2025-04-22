@@ -46,34 +46,25 @@ def category_view(request, category_name):
 @login_required
 def add_project(request):
     if request.method == 'POST':
-        form = ProjectForm(request.POST, request.FILES)
+        form = ProjectForm(request.POST, request.FILES)  # Make sure request.FILES is passed
         if form.is_valid():
-            # Save the form instance but don't commit to the database yet
-            project = form.save(commit=False)
-            # Assign the logged-in user to the project
-            project.user = request.user
-            # Now save the project to the database
-            project.save()
-
-            # Show a success message and redirect to the project list
-            messages.success(request, "Project added successfully!")
+            form.save()
             return redirect('project_list')
-        else:
-            messages.error(request, "There was an error with your form submission.")
     else:
         form = ProjectForm()
+        
     return render(request, 'add_project.html', {'form': form})
-
+    
 
 # Edit Project view
 @login_required
 def edit_project(request, pk):
-    project = get_object_or_404(Project, pk=pk)
+    project = Project.objects.get(pk=pk)
     if request.method == 'POST':
-        form = ProjectForm(request.POST, request.FILES, instance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)  # Make sure request.FILES is passed
         if form.is_valid():
             form.save()
-            return redirect('project_list')  # Replace 'project_list' with your URL name
+            return redirect('project_list')
     else:
         form = ProjectForm(instance=project)
 
@@ -163,7 +154,7 @@ def project_detail(request, project_id):
 # CustomLoginView for Login
 class CustomLoginView(LoginView):
     template_name = 'login.html'
-
+    
 # Add Comment view
 def add_comment(request, project_id):
     project = get_object_or_404(Project, id=project_id)
