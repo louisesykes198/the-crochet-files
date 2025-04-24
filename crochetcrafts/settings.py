@@ -133,7 +133,7 @@ MEDIA_URL = f"https://res.cloudinary.com/{os.getenv('CLOUD_NAME')}/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files storage
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Security Settings
