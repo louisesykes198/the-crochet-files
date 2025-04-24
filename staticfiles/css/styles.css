@@ -170,7 +170,11 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+<<<<<<< HEAD
     border: 4px dashed #f8dbdb; /* pastel pink border */
+=======
+    border: 4px dashed #c92828; /* pastel pink border */
+>>>>>>> 6be92841185554a0156775989dd8a71632257839
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
