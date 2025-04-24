@@ -6,6 +6,17 @@ import environ
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from dotenv import load_dotenv
+
+load_dotenv()
+
+cloudinary.config(
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET')
+)
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -103,12 +114,17 @@ USE_TZ = True
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dprjwdfdq',
-    'API_KEY': '231743462944282',
-    'API_SECRET': 'MGGYM1LQSh4AZjUtMYuDrHvz8kU',
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+print("Cloudinary cloud_name:", os.getenv('CLOUDINARY_CLOUD_NAME'))
+print("Cloudinary API Key:", os.getenv('CLOUDINARY_API_KEY'))
+print("Cloudinary API Secret:", os.getenv('CLOUDINARY_API_SECRET'))
+
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
@@ -116,7 +132,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (for uploaded images)
-MEDIA_URL = 'https://res.cloudinary.com/your_cloud_name/'
+MEDIA_URL = f"https://res.cloudinary.com/{os.getenv('CLOUD_NAME')}/"
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files storage
