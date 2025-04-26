@@ -75,15 +75,17 @@ def edit_project(request, pk):
 def delete_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
 
-    print(f"Logged-in user: {request.user}")  
-    print(f"Project owner: {project.user}")  
+    try:
+        # Check if project has a user and if the logged-in user is the same
+        if project.user == request.user:
+            project.delete()
+            return redirect('project_list')
+        else:
+            return HttpResponse("You do not have permission to delete this project.", status=403)
+    except Project.user.RelatedObjectDoesNotExist:
+        return HttpResponse("This project does not have a user assigned.", status=400)
 
-    if project.user == request.user:
-        project.delete()
-        return redirect('project_list')  
-    else:
-        return HttpResponse("You do not have permission to delete this project.", status=403)
-    
+   
     print(f"Logged-in user: {request.user}")  
     print(f"Project owner: {project.user}")
 
@@ -150,6 +152,7 @@ def project_detail(request, project_id):
         'comments': comments,
         'likes': likes
     })
+
 
 # CustomLoginView for Login
 class CustomLoginView(LoginView):
