@@ -249,18 +249,28 @@ h3 {
 
 /* Mobile Navigation Styling */
 @media (max-width: 767px) {
-    /* Set background color of the navbar */
-    .navbar-nav {
-        background-color: rgb(211, 236, 252); /* Black background for the navbar */
+    /* Set the background of the navbar-toggler button to blue */
+    .navbar-toggler {
+        background-color: #ADD8E6 !important; /* Light blue background */
+        border: none;  /* Remove any borders */
     }
 
-    /* Change color of the nav links */
-    .navbar-nav .nav-link {
-        color: rgb(20, 19, 19) !important; /* White text for the links */
-    }
-    
-    /* Change the color of the hamburger menu (burger icon) */
+    /* Target the lines inside the hamburger icon (span) */
     .navbar-toggler-icon {
-        background-color: rgb(29, 26, 26) !important; 
+        background-color: transparent !important; /* Make the background of the icon transparent */
+    }
+
+    /* Style the lines */
+    .navbar-toggler-icon:before,
+    .navbar-toggler-icon:after {
+        background-color: black !important;  /* Make the lines black */
+    }
+
+    .navbar-toggler-icon span {
+        background-color: black !important;  /* Ensure the middle line is also black */
     }
 }
+
+
+
+
