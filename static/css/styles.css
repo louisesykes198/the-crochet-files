@@ -179,7 +179,7 @@ h3 {
 
 .project-image {
     width: 100%;
-    height: 250px;
+    height: 75%;
     object-fit: cover;
     object-position: center;
     border-bottom: 4px dashed #fae5e5; /* move border to the image itself */
