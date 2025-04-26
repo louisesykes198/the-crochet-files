@@ -246,3 +246,21 @@ h3 {
     padding: 20px 0;
     text-align: center;   
 }
+
+/* Mobile Navigation Styling */
+@media (max-width: 767px) {
+    /* Set background color of the navbar */
+    .navbar-nav {
+        background-color: rgb(211, 236, 252); /* Black background for the navbar */
+    }
+
+    /* Change color of the nav links */
+    .navbar-nav .nav-link {
+        color: rgb(20, 19, 19) !important; /* White text for the links */
+    }
+    
+    /* Change the color of the hamburger menu (burger icon) */
+    .navbar-toggler-icon {
+        background-color: rgb(29, 26, 26) !important; 
+    }
+}
