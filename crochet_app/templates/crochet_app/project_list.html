@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1 class="text-center mb-4">Crochet Patterns</h1>
-<a href="{% url 'add_project' %}" class="btn btn-primary mb-4">Add New Project</a>
+<a href="{% url 'add_project' %}" class="btn btn-primary mb-4">Add New Pattern</a>
 
 <div class="row d-flex align-items-stretch">
     {% for project in projects %}
@@ -32,7 +32,7 @@
         </div>
     </div>
     {% empty %}
-    <p>No projects found.</p>
+    <p>No Pattern found.</p>
     {% endfor %}
 </div>
 {% endblock %}
