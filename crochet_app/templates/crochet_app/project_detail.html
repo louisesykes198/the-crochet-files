@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h2 class="text-center mb-4">Crochet Patterns</h2>
 <div class="container mt-4">
     <!-- Project Card -->
     <div class="card shadow-lg">
@@ -8,26 +9,25 @@
             <!-- Project Image -->
             <div class="col-md-5">
                 {% if project.image %}
-                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.title }}">
+                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="{{ project.name }}">
                 {% else %}
-                    <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" alt="No image available">
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="No image available">
                 {% endif %}
             </div>
 
             <!-- Project Details -->
             <div class="col-md-7 d-flex align-items-center">
                 <div class="card-body">
-                    <h1 class="card-title text-center mb-3">{{ project.title }}</h1>
+                    <h1 class="text-center mb-4" style="font-size: 2.5rem;">{{ project.name }}</h1>
 
                     <p><strong>Category:</strong> {{ project.category }}</p>
                     <p><strong>Description:</strong> {{ project.description }}</p>
                     <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
                     <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
-                    
+
                     {% if project.pattern %}
-                    <a href="{{ project.pattern.url }}" class="btn btn-primary my-3" download>View/Download Pattern</a>
-                {% endif %}
-                
+                        <a href="{{ project.pattern.url }}" class="btn btn-primary my-3" download>View/Download Pattern</a>
+                    {% endif %}
 
                     <!-- Like Button -->
                     <form method="post" class="my-3">
@@ -74,6 +74,7 @@
     </div>
 </div>
 {% endblock %}
+
 
 
 
