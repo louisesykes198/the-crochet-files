@@ -39,7 +39,7 @@ class Project(models.Model):
     pattern = CloudinaryField('raw', blank=True, null=True)
 
     # ForeignKey relation with the user (make this field required)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
       
     created_at = models.DateTimeField(auto_now_add=True)
 

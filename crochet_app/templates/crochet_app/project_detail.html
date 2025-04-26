@@ -8,82 +8,72 @@
             <!-- Project Image -->
             <div class="col-md-5">
                 {% if project.image %}
-                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.name }}">
+                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.title }}">
                 {% else %}
                     <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" alt="No image available">
                 {% endif %}
             </div>
-            
+
             <!-- Project Details -->
-            <div class="col-md-7">
+            <div class="col-md-7 d-flex align-items-center">
                 <div class="card-body">
-                    <h1 class="card-title">{{ project.name }}</h1>
-                    <p class="text-muted"><strong>Category:</strong> {{ project.category }}</p>
+                    <h1 class="card-title text-center mb-3">{{ project.title }}</h1>
+
+                    <p><strong>Category:</strong> {{ project.category }}</p>
                     <p><strong>Description:</strong> {{ project.description }}</p>
                     <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
                     <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
-                    
-                    {% if project.notes %}
-                        <p><strong>Notes:</strong> {{ project.notes }}</p>
-                    {% endif %}
 
-                    {% if project.pattern %}
-                    <p>
-                      <a href="{{ project.pattern.url }}" target="_blank">View/Download Pattern</a>
-                    </p>
-                  {% else %}
-                    <p>No pattern uploaded yet.</p>
-                  {% endif %}
+                    {% if project.pattern_file %}
+                        <a href="{{ project.pattern_file.url }}" class="btn btn-primary my-3" download>View/Download Pattern</a>
+                    {% endif %}
 
                     <!-- Like Button -->
-                    <div class="mt-3">
-                        {% if user.is_authenticated %}
-                            <form method="POST">
-                                {% csrf_token %}
-                                <button type="submit" name="like" class="btn btn-success">
-                                    Like ({{ likes|default:0 }})
-                                </button>
-                            </form>
-                        {% else %}
-                            <p><em>Log in to like this project!</em></p>
-                        {% endif %}
-                        <p class="mt-2">{{ project.likes.count }} Likes</p>
-                    </div>
-
-                    <!-- Edit Button (only for project owner) -->
-                    {% if request.user == project.user %}
-                        <div class="mt-3">
-                            <a href="{% url 'edit_project' project.id %}" class="btn btn-warning">
-                                Edit Project
-                            </a>
-                        </div>
-                    {% endif %}
-
-                    <!-- Delete Button (only for project owner) -->
-                    {% if request.user == project.user %}
-                        <div class="mt-3">
-                            <a href="{% url 'delete_project' project.id %}" class="btn btn-danger"
-                               onclick="return confirm('Are you sure you want to delete this project?');">
-                                Delete
-                            </a>
-                        </div>
-                    {% endif %}
+                    <form method="post" class="my-3">
+                        {% csrf_token %}
+                        <button type="submit" name="like" value="like" class="btn btn-secondary">Like</button>
+                        <span class="ms-2">({{ like_count }} Likes)</span>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Comments Section -->
-    <h3 class="mt-4">Comments:</h3>
-    <ul>
-        {% for comment in project.comments.all %}
-            <li><strong>{{ comment.user.username }}:</strong> {{ comment.comment }}</li>
+    <div class="mt-5">
+        <h2 class="section-title mb-4">Comments:</h2>
+
+        {% for comment in comments %}
+            <div class="comment-box my-3 p-3" style="background: #f0f8ff; border-radius: 10px;">
+                <p><strong>{{ comment.user.username }}</strong> says:</p>
+                <p>{{ comment.comment }}</p>
+                <p class="text-muted" style="font-size: 0.8em;">{{ comment.created_at|date:"M d, Y H:i" }}</p>
+            </div>
         {% empty %}
-            <li>No comments yet.</li>
+            <p>No comments yet. Be the first to comment!</p>
         {% endfor %}
-    </ul>
+
+        <!-- Leave a Comment -->
+        {% if user.is_authenticated %}
+            <h3 class="mt-4">Leave a Comment</h3>
+            <form method="post" class="mt-3">
+                {% csrf_token %}
+                <textarea 
+                    name="comment_text" 
+                    rows="4" 
+                    class="form-control" 
+                    style="border: 2px dashed #f8dbdb; border-radius: 10px; background-color: #fffdfd;"
+                    placeholder="Write your comment here..."
+                ></textarea>
+                <button type="submit" name="comment" value="comment" class="btn btn-primary mt-3">Post Comment</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
+
 
 
 

@@ -127,10 +127,14 @@ def user_login(request):
     return render(request, 'registration/login.html', {'form': form})
 
 # Project Detail view (likes and comments handling)
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import Project, Like, Comment
+
 @login_required
 def project_detail(request, project_id):
     project = get_object_or_404(Project, id=project_id)
-    like_count = project.likes.count()
+
     if request.method == 'POST':
         if 'like' in request.POST:
             if not Like.objects.filter(project=project, user=request.user).exists():
@@ -145,14 +149,15 @@ def project_detail(request, project_id):
                 messages.success(request, "Your comment was posted!")
             else:
                 messages.error(request, "Comment cannot be empty.")
+
     comments = Comment.objects.filter(project=project)
-    likes = Like.objects.filter(project=project).count()
+    like_count = Like.objects.filter(project=project).count()
+
     return render(request, 'crochet_app/project_detail.html', {
         'project': project,
         'comments': comments,
-        'likes': likes
+        'like_count': like_count
     })
-
 
 # CustomLoginView for Login
 class CustomLoginView(LoginView):
