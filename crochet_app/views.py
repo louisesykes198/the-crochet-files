@@ -38,8 +38,16 @@ def project_list(request):
     return render(request, 'crochet_app/project_list.html', {'projects': projects})
 
 # Category view (projects based on category)
+@login_required
 def category_view(request, category_name):
-    projects = Project.objects.filter(category__iexact=category_name)
+    # Add 's' at the end for matching
+    if category_name.lower() == 'scarves':
+        lookup_name = 'Scarves'
+    elif category_name.lower() == 'amigurumi':
+        lookup_name = 'Amigurumi'
+    else:
+        lookup_name = category_name + 's'
+    projects = Project.objects.filter(category__iexact=lookup_name)
     return render(request, 'category_view.html', {'projects': projects, 'category': category_name})
 
 # Add Project view

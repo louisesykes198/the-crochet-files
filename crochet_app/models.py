@@ -38,13 +38,14 @@ class Project(models.Model):
     image = CloudinaryField('image', blank=True, null=True)
     pattern = CloudinaryField('raw', blank=True, null=True)
 
-    # ForeignKey relation with the user (make this field required)
+    # ForeignKey relation with the user
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
       
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
 class Comment(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -84,7 +85,6 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
-
 
 
     
