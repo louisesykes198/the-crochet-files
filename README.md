@@ -21,5 +21,12 @@ The Crochet Files is a web platform where users can share, explore, and engage w
 - As a user, I want to create an account to access and contribute to crochet projects.  
 - As a user, I want to log in and out securely to protect my account.  
 - As a user, I want to view crochet projects shared by others so that I can find inspiration and ideas. 
-- As a user, I want to like and comment on crochet projects so that I can show appreciation and join the community.   
+- As a user, I want to like and comment on crochet projects so that I can show appreciation and join the community.
+
+#### **Project Uploads & Management**  
+- As a user, I want to add a new crochet project with images and text so that I can share my work with others.  
+- As a user, I want to edit my crochet projects so that I can make corrections or updates.  
+- As a user, I want to delete my crochet projects so that I can remove content I no longer want to share.  
+- As a user, I want to categorize my crochet projects so that others can easily find them.  
+
 
