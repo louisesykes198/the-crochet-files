@@ -379,6 +379,36 @@ Clear layout promotes easy navigation and interaction with each pattern.
 
 ![image](docs/project-page.png)
 
+#### **Blanket Project Page** 
+
+This page is a "Blanket Patterns" section from a crochet-themed website, likely part of The Crochet Files or My Crochet Page. It displays six crochet blanket pattern cards in a visually appealing grid layout, using a soft, pastel color palette with a light blue background. Each card includes:
+
+Pattern Name: Bunny Blanket, Baby Blanket, and more.
+
+Image of the blanket
+
+Brief Description of the pattern
+
+A "View Pattern" button styled with a blue border and hover effect
+
+The six featured blanket patterns are:
+
+Bunny Blanket – A cozy blanket with an adorable bunny theme.
+
+Baby Blanket – A simple, soothing baby blanket ideal for beginners.
+
+Granny Square Blanket – A vibrant, colorful take on a traditional granny square design.
+
+Lattice Blanket – Elegant with a textured design, great for home decor.
+
+Shell Blanket – Features pastel shell stitch patterns, soft and elegant.
+
+Cat and Mouse Blanket – Whimsical and fun, featuring cat and mouse motifs.
+
+Each pattern is likely clickable for more details. The layout and card style are consistent and user-friendly, making it easy to browse.
+
+![image](docs/blanket-page.png)
+
 
 
 
