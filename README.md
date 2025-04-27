@@ -876,6 +876,15 @@ Once you’ve made your changes, don’t forget to save and share your updated c
 
 ![image](docs/edit-page.png)
 
+#### **Logout**
+
+The Logout button is located in the top-right corner of the navigation bar.
+When clicked, it securely logs the user out of their account and redirects them back to the Home page.
+This ensures users leave their session safely while returning to a welcoming, public view of the site.
+
+The button is styled to match the site's design, with a soft, rounded appearance and subtle hover effect.
+
+![image](docs/logged-out.png)
 
 
 
