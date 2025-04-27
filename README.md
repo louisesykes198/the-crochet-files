@@ -27,6 +27,11 @@ The Crochet Files is a web platform where users can share, explore, and engage w
 - As a user, I want to add a new crochet project with images and text so that I can share my work with others.  
 - As a user, I want to edit my crochet projects so that I can make corrections or updates.  
 - As a user, I want to delete my crochet projects so that I can remove content I no longer want to share.  
-- As a user, I want to categorize my crochet projects so that others can easily find them.  
+- As a user, I want to categorize my crochet projects so that others can easily find them.
+
+#### **Browsing & Filtering**  
+- As a user, I want to browse crochet projects so that I can find inspiration.  
+- As a user, I want to filter crochet projects by category and difficulty level so that I can find patterns that match my skill level.  
+- As a user, I want to search for crochet projects by keywords so that I can find specific patterns or techniques.  
 
 
