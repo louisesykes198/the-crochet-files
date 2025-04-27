@@ -102,5 +102,94 @@ After submission, the project is displayed in the Projects list.
 
 Users can safely log out using the navigation bar, which clears their session. 
 
+## 📐 Wireframes
+
+My website's wireframes serve as a basic framework for organising and arranging its overall design.
+They ensure a well-organised layout that improves user experience by offering clear visual guidance for creating each page.
+The wireframes outline important components like navigation, content placement, and interactive features.
+which helps to expedite the design process and guarantee a logical, user-friendly flow throughout the website.
+
+
+#### Desktop Wireframe 
+
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/desktop-login-page.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/desktop-registration-page.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/desktop-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/desktop-project-page.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/desktop-edit-page.png" alt="Edit Page">
+</details>
+
+#### Mobile Wireframe 
+
+<details>
+<summary>Login Page - Mobile</summary>
+<img src="docs/moblie-register.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Mobile</summary>
+<img src="docs/moblie-login.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Mobile</summary>
+<img src="docs/mobile-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Mobile</summary>
+<img src="docs/mobile-project.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Mobile</summary>
+<img src="docs/moblie-edit.png" alt="Edit Page">
+</details>
+
+#### Tablet and iPad Wireframe 
+
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/tablet-login.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/tablet-register.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/tablet-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/tablet-project.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/tablet-edit.png" alt="Edit Page">
+</details>
+
 
 
