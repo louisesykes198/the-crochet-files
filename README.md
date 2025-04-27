@@ -483,6 +483,101 @@ The user can click on the download arrow so they can save it to there device.
 
 ![image](docs/downlaod-pattern.png)
 
+#### **View, Edit and Delete Buttons**
+
+#### View Button
+
+Purpose: The View button allows users to open the full details of a crochet pattern.
+
+How it Works: When clicked, it takes the user to a dedicated page where they can see the full pattern information — including materials, skill level, notes, images, and download links.
+
+Design: It’s usually styled with a soft blue outline to match the site’s pastel theme.
+
+User Experience: Users can explore the complete pattern without accidentally editing or deleting anything, making it safe for viewing only.
+
+#### Edit Button
+
+Purpose: The Edit button allows users to update or correct details of a pattern they have created.
+
+How it Works: When clicked, it navigates the user to an editable form pre-filled with the pattern’s current information. The user can change text, replace images, or upload a new file.
+
+Design: Often styled slightly differently (such as using a pencil icon or a colored border) to visually indicate its function.
+
+User Experience: Users can quickly make adjustments — like fixing a typo, updating materials, or adding extra notes — without needing to recreate the whole pattern.
+
+#### Delete Button
+
+Purpose: The Delete button allows users to permanently remove a pattern they have posted.
+
+How it Works:
+
+When clicked, a confirmation prompt usually appears asking the user if they are sure they want to delete the pattern (to prevent accidents).
+
+Once confirmed, the pattern is removed from the database and no longer appears on the site.
+
+Design: Typically styled in a color that signals caution (like a soft red or orange outline) to make users aware that it's a destructive action.
+
+User Experience: The deletion process is designed to be quick but careful, ensuring users don’t lose content by mistake.
+
+![image](docs/view-buttons.png)
+
+#### Project Detail Page Description (View Project Page)
+
+This page displays the full details of a single crochet project, combining both visual and textual elements in a clean, user-friendly layout that matches the site's soft, pastel design.
+
+##### Page Layout:
+Background: Light pastel blue, maintaining the calming, cohesive theme across the site.
+
+Card Design: A large white rounded card with subtle shadows, keeping the focus on the project content.
+
+##### Content Sections:
+##### Project Image:
+
+Positioned on the left side of the card.
+
+Large and clear, showing a detailed view of the crochet project (in this case, two adorable penguin plushies).
+
+Helps users immediately see what the project looks like, inspiring interest and creativity.
+
+##### Project Information (on the right side):
+
+Project Title: Displayed prominently at the top in bold, large text (e.g., "Penguin").
+
+Category: A smaller label showing the type of project (e.g., "Amigurumi").
+
+Description: A friendly, inviting paragraph that introduces the project, its features, and suggestions for use. It sets a warm, helpful tone.
+
+Skill Level: Listed to help users quickly understand the difficulty (e.g., "Intermediate").
+
+Materials Needed: A practical list of supplies like yarn type, hook size, and accessories needed to complete the project.
+
+##### Action Buttons:
+##### View/Download Pattern Button:
+
+Located under the materials list.
+
+Styled with a soft blue outline and rounded edges to stay on-brand.
+
+When clicked, the pattern opens in a new browser tab or window, allowing users to view or download the pattern without losing their place on the site.
+
+##### Like Button:
+
+Soft pink button beneath the download button.
+
+Allows users to like the project, with a visible counter showing how many likes it has received (e.g., "2 Likes").
+
+##### Navigation:
+##### Navbar at the top includes:
+
+Home | Add Pattern | Patterns | Logout
+
+It provides users with easy access to different parts of the site while keeping them logged in and engaged.
+
+##### Overall Feel:
+This page is bright, organized, and welcoming, making it easy for users to enjoy viewing crochet projects, quickly find important project information, and interact with patterns through likes and downloads.
+
+![image](docs/view-pattern.png)
+
 #### **Comment Section**
 
 The Comment Section allows users to engage with crochet patterns by sharing their thoughts, feedback, and experiences. It fosters a sense of community where users can ask questions, offer tips, or simply express appreciation for a pattern. This section is placed beneath the pattern’s description or image, encouraging interaction among users.
