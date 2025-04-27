@@ -311,6 +311,36 @@ The entire layout sits on a soft blue background, reflecting the calm and creati
 
 ![image](docs/landing-page.png)
 
+#### **Add Pattern Page**
+
+The “Add a New Pattern” page on The Crochet Files allows users to share their crochet creations by submitting detailed pattern entries. The page features a clean form layout with labeled fields for user input.
+
+Form Fields Include:
+
+Pattern Name – A single-line text field to title the pattern.
+
+Description – A larger text area for an overview or story behind the pattern.
+
+Skill Level – A dropdown menu to select difficulty (e.g., Beginner).
+
+Materials Needed – A field to list yarn types, hook sizes, and other supplies.
+
+Category – Dropdown to categorize the pattern (e.g., Blanket, Hat, Amigurumi).
+
+Notes – Optional space for tips, modifications, or personal thoughts.
+
+File Uploads:
+
+Upload Pattern (PDF) – Attach a pattern file to share with others.
+
+Upload Image – Upload a photo of the finished project for inspiration.
+
+At the bottom, a rounded “Save Project” button allows users to submit their pattern once complete.
+
+The page uses a soft blue background with a simple, welcoming aesthetic, keeping the focus on creativity and contribution.
+
+![image](docs/add-page.png)
+
 
 
 
