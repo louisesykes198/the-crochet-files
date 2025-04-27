@@ -409,6 +409,45 @@ Each pattern is likely clickable for more details. The layout and card style are
 
 ![image](docs/blanket-page.png)
 
+#### **Cardigan Project Page**
+
+This page is the "Cardigan Patterns" section of your crochet-themed website. It follows the same clean, pastel-toned design as the “Blanket Patterns” page, with a light blue background, rounded white cards, and consistent card layout.
+
+Each card includes:
+
+A project image
+
+Pattern title in bold
+
+A brief description of the pattern
+
+A blue-bordered "View Pattern" button
+
+The featured cardigan patterns are:
+
+Adult Crew Neck Sweater – A timeless and versatile casual sweater.
+
+Matinee Jacket – A warm and elegant jacket, ideal for babies or special occasions.
+
+Gathering Leaves Cardigan – A charming, fall-themed cardigan with swirling leaf motifs.
+
+Iris Cardigan – A long, elegant cardigan perfect for layering, featuring a classic design.
+
+Peggy Cardigan – A red cardigan with a relaxed fit, adding subtle elegance to casual outfits.
+
+Baby Cardigan – A soft and stylish option for babies, with matching booties in the image.
+
+Design Notes:
+
+The cards have consistent sizing and styling.
+
+The descriptions are concise and inviting.
+
+Button design matches the “Blanket Patterns” section, ensuring visual harmony.
+
+![image](docs/cardigan-page.png)
+
+
 
 
 
