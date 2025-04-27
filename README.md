@@ -485,6 +485,44 @@ The tone is whimsical and lighthearted, matching the amigurumi theme well.
 
 ![image](docs/ami-page.png)
 
+#### **Scarf Project Page**
+
+This is the "Scarves Patterns" section of your crochet website, dedicated to stylish and cozy accessories perfect for any season. It keeps the same cohesive design as the rest of the site, featuring a soft pastel blue background and crisp white pattern cards.
+
+Each card includes:
+
+An image of the scarf
+
+A pattern title
+
+A short, catchy description
+
+A "View Pattern" button with a soft blue outline
+
+The featured Scarf patterns:
+
+Bow Scarf – A chic scarf with a playful bow detail, blending style and whimsy.
+
+Infinity Scarf – An endlessly looped scarf for effortless layering and warmth.
+
+Mouse Snoody – A cute, critter-themed snoody with cozy character and charm.
+
+Racer Wrap – A bold, modern wrap with clean lines and sleek design.
+
+Straight Up Scarf – A minimal and timeless scarf that pairs with anything.
+
+Zepplin Scarf – Airy and modern, this scarf adds elevated simplicity to your look.
+
+Design Highlights:
+
+Patterns are displayed in a clean two-row, three-column grid for easy browsing.
+
+Each image showcases the scarf clearly, inviting users to explore further.
+
+The tone is cozy, stylish, and inviting — just like the scarves themselves.
+
+![image](docs/scarf-page.png)
+
 
 
 
