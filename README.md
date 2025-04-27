@@ -283,6 +283,66 @@ The gentle blue background and clean design make for a peaceful, user-friendly l
 
 ![image](docs/login-page.png)
 
+#### **Navagation Bar**
+
+##### **Navigation Bar Before Registration**
+
+For users who have not logged in yet, the navbar presents options to either log in or create a new account. It includes:
+
+Logo or Site Title on the left, linking back to the homepage.
+
+Core navigation links:
+
+Home – Directs users to the homepage to explore patterns and other content.
+
+Add Pattern – Visible only to logged-in users, so this might not be shown on the logged-out navbar.
+
+Patterns – A page featuring all available crochet patterns from the community.
+
+On the right-hand side:
+
+Login – A button that takes users to the login page where they can access their account.
+
+Register – A button that leads to the registration page, where new users can sign up for an account.
+
+Design Highlights:
+
+Same pastel blue background with white text links for a cohesive and welcoming feel.
+
+Clean and minimal, designed to invite users to join or access their account.
+
+Collapsible on mobile with a hamburger menu, keeping navigation fluid across devices.
+
+![image](docs/navbar-two.png) 
+
+##### **Navigation Bar After Registration**
+
+Once a user has successfully logged in, the navbar adapts to provide easy access to their personalized features. It includes:
+
+Logo or Site Title on the left, linking back to the homepage.
+
+Core navigation links:
+
+Home – Directs to the homepage, featuring a welcoming layout of patterns and content.
+
+Add Pattern – Allows users to add their own crochet patterns to share with the community.
+
+Patterns – Leads to a collection of all user-submitted crochet patterns.
+
+On the right-hand side:
+
+Logout – A button to log the user out of their account, styled with a soft blue background and clear text.
+
+Design Highlights:
+
+Soft pastel blue background for the navbar with white text links.
+
+A streamlined layout with easy-to-access buttons, making navigation smooth for logged-in users.
+
+Responsive design that collapses into a hamburger menu on smaller screens, ensuring it works well on mobile.
+
+![image](docs/navbar.png)
+
 #### **Home Page**
 
 The Welcome Page of The Crochet Files invites users into a cozy, colorful space to explore different crochet project categories. The layout features a friendly greeting at the top, followed by a prompt to select a category.
