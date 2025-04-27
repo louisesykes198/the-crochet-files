@@ -561,6 +561,44 @@ The tone is playful, stylish, and cozy, matching the warm and creative vibe of t
 
 ![image](docs/hat-page.png)
 
+#### **Dishcloth Pattern Page**
+
+This is the "Dishcloth Patterns" section of your crochet website, featuring a collection of functional and decorative crochet patterns for the kitchen and home. Staying true to the site’s aesthetic, the section is presented with a soft pastel blue background and clean white pattern cards for a cohesive, inviting look.
+
+Each card includes:
+
+An image of the dishcloth or coaster
+
+A pattern title
+
+A short, friendly description
+
+A "View Pattern" button outlined in blue
+
+The featured Dishcloth patterns:
+
+Dishcloth and Tea Towel – A simple and elegant set that blends style and function for your daily kitchen needs.
+
+Corgi Butts Coasters – Playful and adorable, these coasters bring a smile with every fluffy-tailed corgi design.
+
+Fantasy Naturale – A bright and practical dishcloth that highlights natural cotton yarn in bold, fun colors.
+
+Holi Inspired Dishcloth – A festive and colorful design inspired by the joyful hues of the Holi celebration.
+
+Sunburst Coaster – Radiating texture and cheer, this sunny coaster adds handmade warmth to any table.
+
+Snowflake Coaster – Delicate and elegant, this winter-themed design adds a touch of seasonal magic to your décor.
+
+Design Highlights:
+
+All pattern cards are arranged in a neat two-row, three-column grid.
+
+Images are bright and showcase the texture and shape of each dishcloth.
+
+The tone is cheerful and homey, matching the comforting, everyday nature of dishcloths and coasters.
+
+![image](docs/dish-page.png)
+
 
 
 
