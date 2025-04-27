@@ -341,6 +341,44 @@ The page uses a soft blue background with a simple, welcoming aesthetic, keeping
 
 ![image](docs/add-page.png)
 
+#### **Pattern Page**
+
+The Crochet Files page is a beautifully laid-out collection of user-added crochet patterns. It serves as a gallery where each pattern is presented with a preview, allowing users to browse, view, edit, or delete their creations.
+
+Page Layout & Features:
+
+Add New Pattern Button:
+
+Located at the top, this button allows users to quickly navigate to the form for submitting a new crochet pattern.
+
+Pattern Cards:
+
+Each pattern is displayed within an individual, color-bordered card.
+
+Image Preview: A photo representing the crochet project.
+
+Pattern Title: Clearly stated at the top of the card.
+
+Short Description: A summary of the pattern’s charm and purpose (truncated for quick browsing).
+
+Skill Level: Shows the required experience: Beginner, Intermediate, and Advanced.
+
+Category: Organizes the pattern type: Blankets, Cardigans, Amigurumi, Hats, Scarves, and Dishcloths.
+
+Action Buttons:
+
+View Pattern: Takes the user to the full pattern description and downloadable resources.
+
+Edit: Allows the user to update any pattern details.
+
+Delete: Removes the pattern from the list.
+
+Design: Uses soft pastel colors and a dotted border for each card to give a handcrafted, friendly vibe.
+
+Clear layout promotes easy navigation and interaction with each pattern.
+
+![image](docs/project-page.png)
+
 
 
 
