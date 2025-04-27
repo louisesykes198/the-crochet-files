@@ -439,6 +439,50 @@ Clear layout promotes easy navigation and interaction with each pattern.
 
 ![image](docs/project-page.png)
 
+#### **View/Download Button** 
+
+The View/Download Button is an essential feature on the site, enabling users to either view or download crochet patterns. This button opens the pattern in a new window, ensuring the user experience remains smooth and uninterrupted while browsing the site.
+
+Features:
+
+Text: The button is clearly labeled with either "View Pattern" or "Download Pattern", depending on the action it performs.
+
+Action:
+
+View Pattern: When users click this option, the pattern opens in a new window or tab. This allows users to view the full pattern without navigating away from the current page, keeping them engaged with the website.
+
+Download Pattern: Clicking this option opens the pattern file for download, typically in PDF format, so users can save it to their devices for offline use.
+
+Design:
+
+The button is styled with a soft blue background and black text, ensuring it blends seamlessly with the overall pastel color palette of the site.
+
+Rounded corners create a friendly, approachable look, fitting the overall aesthetic of the site.
+
+A hover effect is applied to the button, darkening the background color slightly to indicate interactivity and enhance the visual appeal.
+
+Placement: Positioned below the pattern’s description or image, the button is easily visible and accessible for users looking to view or download the pattern.
+
+Responsive: The button is fully responsive, ensuring that it functions correctly across all devices (desktop, tablet, and mobile). On mobile, the button remains large enough to be easily clicked or tapped.
+
+Design Highlights:
+
+Consistent pastel color scheme that complements the rest of the site.
+
+Clear, intuitive functionality that allows users to either view or download patterns without leaving the current page or tab.
+
+Smooth hover transition effect for added interactivity and visual feedback.
+
+![image](docs/down-button.png)
+
+#### **Download View** 
+
+When the user clicks on the View/Download Pattern button, the action is designed to open the crochet pattern in a new browser window or tab, allowing users to view the full pattern without leaving the current page they’re on.
+
+The user can click on the download arrow so they can save it to there device. 
+
+![image](docs/downlaod-pattern.png)
+
 #### **Blanket Pattern Page** 
 
 This page is a "Blanket Patterns" section from a crochet-themed website, likely part of The Crochet Files or My Crochet Page. It displays six crochet blanket pattern cards in a visually appealing grid layout, using a soft, pastel color palette with a light blue background. Each card includes:
