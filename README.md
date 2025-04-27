@@ -67,5 +67,40 @@ It is a useful tool for enhancing usability, streamlining navigation, and spotti
 <img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
 </details> 
 
+### **How Users Move Through the Site**  
+
+- Home Page 
+When visitors first arrive at the home page, they will be asked to either register or log in.
+
+- Authentication
+
+Users can either log in or register.
+
+After logging in, they are redirected to the main Projects page.
+
+- Browsing Projects
+
+Users can view all shared crochet projects.
+
+They can filter projects by category or difficulty.
+
+Clicking a project opens a detailed view with images, materials, notes, and pattern instructions.
+
+- Engagement
+
+Logged-in users can like or comment on projects.
+
+Users can also delete their comments.
+
+- Creating Content
+
+Logged-in users can create a new crochet project by filling out a form with all relevant fields.
+
+After submission, the project is displayed in the Projects list.
+
+- Logging Out
+
+Users can safely log out using the navigation bar, which clears their session. 
+
 
 
