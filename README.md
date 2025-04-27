@@ -886,6 +886,31 @@ The button is styled to match the site's design, with a soft, rounded appearance
 
 ![image](docs/logged-out.png)
 
+### **Accessibility**  
+
+Accessibility has been a key focus during the development of The Crochet Files, ensuring that all users, including those with disabilities, can comfortably navigate and enjoy the website. Several strategies were implemented to create an inclusive experience:
+
+Text Contrast
+
+High Contrast: The site follows the Web Content Accessibility Guidelines (WCAG) by maintaining strong contrast between text and background elements, making content easier to read for users with visual impairments such as low vision or color blindness.
+
+Color Scheme: A soft pastel palette is used thoughtfully, with careful attention to contrast ratios. This ensures that all text remains legible and content stands out clearly against background colors.
+
+Alt Text for Images
+
+Descriptive Alt Text: All images across the website — including project images and category sections — feature meaningful alternative (alt) text. This provides helpful descriptions for users who rely on screen readers or have images disabled.
+
+Contextual Relevance: Alt text is kept concise yet descriptive, helping users understand the purpose and content of each image without visual input.
+
+Keyboard Navigation Support
+
+Keyboard Accessibility: The site is fully navigable using a keyboard alone. Users can move through links, buttons, and form fields using the Tab key, and activate them using the Enter key.
+
+Focus Indicators: Clear visual focus indicators (such as outline borders) are provided to show which element is currently selected, helping users who navigate without a mouse.
+
+Accessible Forms: All forms — including login, registration, project submission, and editing forms — are properly labeled and structured to be easily usable with a keyboard.
+
+By implementing these features, The Crochet Files aims to provide a welcoming and accessible experience for all users, regardless of ability.
 
 
 
