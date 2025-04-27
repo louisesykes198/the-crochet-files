@@ -42,7 +42,30 @@ The Crochet Files is a web platform where users can share, explore, and engage w
 
 #### **Admin & Moderation**  
 - As an admin, I want to manage users so that I can ensure a positive community experience.  
-- As an admin, I want to delete inappropriate projects or comments so that the platform remains safe and friendly.  
+- As an admin, I want to delete inappropriate projects or comments so that the platform remains safe and friendly.
+
+## 📌 Site Structure  
+
+### **Navigation Flow**  
+How users move between different sections of the site.
+
+### **User Flow Diagram**  
+
+The User Flow Diagram maps out every step a user takes from arriving at the homepage to doing different tasks. 
+such as exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
+This diagram illustrates the steps users take to access important features, navigate between sites, and interact with forms. 
+The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
+It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
+
+<details>
+<summary>Flow Diagram</summary>
+<img src="docs/flow.png" alt="Flow Diagram">
+</details>
+
+<details>
+<summary>Wireframe Flow Diagram</summary>
+<img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
+</details> 
 
 
 
