@@ -447,6 +447,44 @@ Button design matches the “Blanket Patterns” section, ensuring visual harmon
 
 ![image](docs/cardigan-page.png)
 
+#### **Amigurumi Project Page**
+
+his is the "Amigurumi Patterns" section of your crochet website, showcasing cute and creative crocheted characters and toys. It follows the same consistent and visually cohesive design as the other pattern sections, with a pastel blue background and clean white pattern cards.
+
+Each card includes:
+
+An image of the amigurumi character
+
+A pattern title
+
+A short description
+
+A "View Pattern" button with a blue outline
+
+The featured Amigurumi patterns:
+
+Barnyard Friends Collection – A group of adorable farm animals including a pig, chick, and lamb.
+
+Bumble Bee Keyring – Small, cheerful bee keychains to brighten your day.
+
+Octopus – A soft, stackable octopus plushie with wiggly legs and friendly faces.
+
+Penguin – A cute, chubby penguin plushie with flipper wings and a tiny beak.
+
+Pikachu – A crocheted version of the beloved Pokémon character, full of energy and fun.
+
+Disney Stitch – A playful Stitch plushie, full of mischief and charm.
+
+Design Highlights:
+
+The layout is neatly arranged in two rows of three cards.
+
+The images are vibrant and engaging, perfect for grabbing attention.
+
+The tone is whimsical and lighthearted, matching the amigurumi theme well.
+
+![image](docs/ami-page.png)
+
 
 
 
