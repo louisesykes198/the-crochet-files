@@ -379,7 +379,7 @@ Clear layout promotes easy navigation and interaction with each pattern.
 
 ![image](docs/project-page.png)
 
-#### **Blanket Project Page** 
+#### **Blanket Pattern Page** 
 
 This page is a "Blanket Patterns" section from a crochet-themed website, likely part of The Crochet Files or My Crochet Page. It displays six crochet blanket pattern cards in a visually appealing grid layout, using a soft, pastel color palette with a light blue background. Each card includes:
 
@@ -409,7 +409,7 @@ Each pattern is likely clickable for more details. The layout and card style are
 
 ![image](docs/blanket-page.png)
 
-#### **Cardigan Project Page**
+#### **Cardigan Pattern Page**
 
 This page is the "Cardigan Patterns" section of your crochet-themed website. It follows the same clean, pastel-toned design as the “Blanket Patterns” page, with a light blue background, rounded white cards, and consistent card layout.
 
@@ -447,9 +447,9 @@ Button design matches the “Blanket Patterns” section, ensuring visual harmon
 
 ![image](docs/cardigan-page.png)
 
-#### **Amigurumi Project Page**
+#### **Amigurumi Pattern Page**
 
-his is the "Amigurumi Patterns" section of your crochet website, showcasing cute and creative crocheted characters and toys. It follows the same consistent and visually cohesive design as the other pattern sections, with a pastel blue background and clean white pattern cards.
+This is the "Amigurumi Patterns" section of your crochet website, showcasing cute and creative crocheted characters and toys. It follows the same consistent and visually cohesive design as the other pattern sections, with a pastel blue background and clean white pattern cards.
 
 Each card includes:
 
@@ -485,7 +485,7 @@ The tone is whimsical and lighthearted, matching the amigurumi theme well.
 
 ![image](docs/ami-page.png)
 
-#### **Scarf Project Page**
+#### **Scarf Pattern Page**
 
 This is the "Scarves Patterns" section of your crochet website, dedicated to stylish and cozy accessories perfect for any season. It keeps the same cohesive design as the rest of the site, featuring a soft pastel blue background and crisp white pattern cards.
 
@@ -522,6 +522,44 @@ Each image showcases the scarf clearly, inviting users to explore further.
 The tone is cozy, stylish, and inviting — just like the scarves themselves.
 
 ![image](docs/scarf-page.png)
+
+#### **Hat Pattern Page**
+
+This is the "Hats Patterns" section of your crochet website, showcasing cozy and creative headwear for all styles and seasons. The design remains consistent with the rest of the site — a soft pastel blue background with clean, white pattern cards that make each item pop.
+
+Each card includes:
+
+An image of the crochet hat
+
+A pattern title
+
+A short, engaging description
+
+A "View Pattern" button outlined in soft blue
+
+The featured Hat patterns:
+
+Cinnamon Swirl Hat and Scarf Set – A warm, coordinating set inspired by cozy cinnamon tones and classic style.
+
+Beginner Beanie – A simple and approachable pattern, perfect for first-time crocheters or relaxing weekend projects.
+
+Candy Cap – Bright, sweet, and full of fun — this playful hat brings a splash of color to any outfit.
+
+Elegant Hat – A refined accessory with timeless charm, perfect for dressing up or down.
+
+Fox Hat – A woodland-inspired design featuring fox ears and adorable detailing for a whimsical touch.
+
+Pebbled Hat – A textured beanie with a stylish “pebbled” surface, offering both warmth and visual interest.
+
+Design Highlights:
+
+Patterns are arranged neatly in a two-row, three-column grid for easy browsing.
+
+Each hat is presented with a vibrant image to capture its unique flair.
+
+The tone is playful, stylish, and cozy, matching the warm and creative vibe of the hat category.
+
+![image](docs/hat-page.png)
 
 
 
