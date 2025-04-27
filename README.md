@@ -291,7 +291,7 @@ For users who have not logged in yet, the navbar presents options to either log 
 
 Logo or Site Title on the left, linking back to the homepage.
 
-Core navigation links:
+##### Core navigation links:
 
 Home – Directs users to the homepage to explore patterns and other content.
 
@@ -299,13 +299,13 @@ Add Pattern – Visible only to logged-in users, so this might not be shown on t
 
 Patterns – A page featuring all available crochet patterns from the community.
 
-On the right-hand side:
+##### On the right-hand side:
 
 Login – A button that takes users to the login page where they can access their account.
 
 Register – A button that leads to the registration page, where new users can sign up for an account.
 
-Design Highlights:
+##### Design Highlights:
 
 Same pastel blue background with white text links for a cohesive and welcoming feel.
 
@@ -321,7 +321,7 @@ Once a user has successfully logged in, the navbar adapts to provide easy access
 
 Logo or Site Title on the left, linking back to the homepage.
 
-Core navigation links:
+##### Core navigation links:
 
 Home – Directs to the homepage, featuring a welcoming layout of patterns and content.
 
@@ -329,11 +329,11 @@ Add Pattern – Allows users to add their own crochet patterns to share with the
 
 Patterns – Leads to a collection of all user-submitted crochet patterns.
 
-On the right-hand side:
+##### On the right-hand side:
 
 Logout – A button to log the user out of their account, styled with a soft blue background and clear text.
 
-Design Highlights:
+##### Design Highlights:
 
 Soft pastel blue background for the navbar with white text links.
 
@@ -375,7 +375,7 @@ The entire layout sits on a soft blue background, reflecting the calm and creati
 
 The “Add a New Pattern” page on The Crochet Files allows users to share their crochet creations by submitting detailed pattern entries. The page features a clean form layout with labeled fields for user input.
 
-Form Fields Include:
+##### Form Fields Include:
 
 Pattern Name – A single-line text field to title the pattern.
 
@@ -389,7 +389,7 @@ Category – Dropdown to categorize the pattern (e.g., Blanket, Hat, Amigurumi).
 
 Notes – Optional space for tips, modifications, or personal thoughts.
 
-File Uploads:
+##### File Uploads:
 
 Upload Pattern (PDF) – Attach a pattern file to share with others.
 
@@ -405,13 +405,13 @@ The page uses a soft blue background with a simple, welcoming aesthetic, keeping
 
 The Crochet Files page is a beautifully laid-out collection of user-added crochet patterns. It serves as a gallery where each pattern is presented with a preview, allowing users to browse, view, edit, or delete their creations.
 
-Page Layout & Features:
+##### Page Layout & Features:
 
-Add New Pattern Button:
+##### Add New Pattern Button:
 
 Located at the top, this button allows users to quickly navigate to the form for submitting a new crochet pattern.
 
-Pattern Cards:
+##### Pattern Cards:
 
 Each pattern is displayed within an individual, color-bordered card.
 
@@ -425,7 +425,7 @@ Skill Level: Shows the required experience: Beginner, Intermediate, and Advanced
 
 Category: Organizes the pattern type: Blankets, Cardigans, Amigurumi, Hats, Scarves, and Dishcloths.
 
-Action Buttons:
+##### Action Buttons:
 
 View Pattern: Takes the user to the full pattern description and downloadable resources.
 
@@ -443,17 +443,17 @@ Clear layout promotes easy navigation and interaction with each pattern.
 
 The View/Download Button is an essential feature on the site, enabling users to either view or download crochet patterns. This button opens the pattern in a new window, ensuring the user experience remains smooth and uninterrupted while browsing the site.
 
-Features:
+##### Features:
 
 Text: The button is clearly labeled with either "View Pattern" or "Download Pattern", depending on the action it performs.
 
-Action:
+##### Action:
 
 View Pattern: When users click this option, the pattern opens in a new window or tab. This allows users to view the full pattern without navigating away from the current page, keeping them engaged with the website.
 
 Download Pattern: Clicking this option opens the pattern file for download, typically in PDF format, so users can save it to their devices for offline use.
 
-Design:
+##### Design:
 
 The button is styled with a soft blue background and black text, ensuring it blends seamlessly with the overall pastel color palette of the site.
 
@@ -465,7 +465,7 @@ Placement: Positioned below the pattern’s description or image, the button is 
 
 Responsive: The button is fully responsive, ensuring that it functions correctly across all devices (desktop, tablet, and mobile). On mobile, the button remains large enough to be easily clicked or tapped.
 
-Design Highlights:
+##### Design Highlights:
 
 Consistent pastel color scheme that complements the rest of the site.
 
@@ -482,6 +482,50 @@ When the user clicks on the View/Download Pattern button, the action is designed
 The user can click on the download arrow so they can save it to there device. 
 
 ![image](docs/downlaod-pattern.png)
+
+#### **Comment Section**
+
+The Comment Section allows users to engage with crochet patterns by sharing their thoughts, feedback, and experiences. It fosters a sense of community where users can ask questions, offer tips, or simply express appreciation for a pattern. This section is placed beneath the pattern’s description or image, encouraging interaction among users.
+
+##### Features:
+
+Text Input Area: Users can type and submit their comments about the crochet pattern. The input field is designed to be simple and easy to use, encouraging participation from both beginners and experienced crocheters.
+
+Submit Button: Once the user has typed their comment, they can click the Submit button to post it. The button is typically styled with a soft color to match the site's pastel theme.
+
+##### Comment Display:
+
+Each comment is displayed underneath the input field, in a clear, organized layout.
+
+User Information: The user’s name or username is displayed next to their comment to identify the poster.
+
+Timestamp: Each comment is accompanied by a timestamp indicating when it was posted, adding context to the conversation.
+
+Reply Feature: Users can respond to other comments, allowing for threaded discussions. This makes it easier for users to engage in specific conversations about the pattern, technique, or tips shared.
+
+Delete/Modify Option: Users can edit or delete their own comments if needed, ensuring control over their input. (Optional feature)
+
+##### Design Highlights:
+
+The comment section is designed with a clean, minimalist layout that integrates seamlessly with the rest of the site’s aesthetic.
+
+Soft pastel color scheme: The background and borders of the comment section are in soft pastel tones, keeping the atmosphere light and welcoming.
+
+Easy Navigation: The comment input area and buttons are designed to be simple and intuitive, encouraging users to contribute without confusion.
+
+Mobile Responsive: The comment section adjusts for smaller screens, ensuring users can easily comment from mobile devices.
+
+##### User Experience:
+
+Engagement: This section creates a space for users to engage with the pattern, ask questions, share modifications, or simply express gratitude.
+
+Community Building: By allowing users to interact with each other, the comment section helps build a sense of community, with people learning from one another and sharing their experiences.
+
+![image](docs/no-comment.png)
+
+##### **Comment Section With a Comment**
+
+![image](docs/with-comment.png)
 
 #### **Blanket Pattern Page** 
 
@@ -541,7 +585,7 @@ Peggy Cardigan – A red cardigan with a relaxed fit, adding subtle elegance to 
 
 Baby Cardigan – A soft and stylish option for babies, with matching booties in the image.
 
-Design Notes:
+##### Design Notes:
 
 The cards have consistent sizing and styling.
 
@@ -555,7 +599,7 @@ Button design matches the “Blanket Patterns” section, ensuring visual harmon
 
 This is the "Amigurumi Patterns" section of your crochet website, showcasing cute and creative crocheted characters and toys. It follows the same consistent and visually cohesive design as the other pattern sections, with a pastel blue background and clean white pattern cards.
 
-Each card includes:
+##### Each card includes:
 
 An image of the amigurumi character
 
@@ -579,7 +623,7 @@ Pikachu – A crocheted version of the beloved Pokémon character, full of energ
 
 Disney Stitch – A playful Stitch plushie, full of mischief and charm.
 
-Design Highlights:
+##### Design Highlights:
 
 The layout is neatly arranged in two rows of three cards.
 
@@ -593,7 +637,7 @@ The tone is whimsical and lighthearted, matching the amigurumi theme well.
 
 This is the "Scarves Patterns" section of your crochet website, dedicated to stylish and cozy accessories perfect for any season. It keeps the same cohesive design as the rest of the site, featuring a soft pastel blue background and crisp white pattern cards.
 
-Each card includes:
+##### Each card includes:
 
 An image of the scarf
 
@@ -603,7 +647,7 @@ A short, catchy description
 
 A "View Pattern" button with a soft blue outline
 
-The featured Scarf patterns:
+##### The featured Scarf patterns:
 
 Bow Scarf – A chic scarf with a playful bow detail, blending style and whimsy.
 
@@ -617,7 +661,7 @@ Straight Up Scarf – A minimal and timeless scarf that pairs with anything.
 
 Zepplin Scarf – Airy and modern, this scarf adds elevated simplicity to your look.
 
-Design Highlights:
+##### Design Highlights:
 
 Patterns are displayed in a clean two-row, three-column grid for easy browsing.
 
@@ -631,7 +675,7 @@ The tone is cozy, stylish, and inviting — just like the scarves themselves.
 
 This is the "Hats Patterns" section of your crochet website, showcasing cozy and creative headwear for all styles and seasons. The design remains consistent with the rest of the site — a soft pastel blue background with clean, white pattern cards that make each item pop.
 
-Each card includes:
+##### Each card includes:
 
 An image of the crochet hat
 
@@ -641,7 +685,7 @@ A short, engaging description
 
 A "View Pattern" button outlined in soft blue
 
-The featured Hat patterns:
+##### The featured Hat patterns:
 
 Cinnamon Swirl Hat and Scarf Set – A warm, coordinating set inspired by cozy cinnamon tones and classic style.
 
@@ -655,7 +699,7 @@ Fox Hat – A woodland-inspired design featuring fox ears and adorable detailing
 
 Pebbled Hat – A textured beanie with a stylish “pebbled” surface, offering both warmth and visual interest.
 
-Design Highlights:
+##### Design Highlights:
 
 Patterns are arranged neatly in a two-row, three-column grid for easy browsing.
 
@@ -669,7 +713,7 @@ The tone is playful, stylish, and cozy, matching the warm and creative vibe of t
 
 This is the "Dishcloth Patterns" section of your crochet website, featuring a collection of functional and decorative crochet patterns for the kitchen and home. Staying true to the site’s aesthetic, the section is presented with a soft pastel blue background and clean white pattern cards for a cohesive, inviting look.
 
-Each card includes:
+##### Each card includes:
 
 An image of the dishcloth or coaster
 
@@ -679,7 +723,7 @@ A short, friendly description
 
 A "View Pattern" button outlined in blue
 
-The featured Dishcloth patterns:
+##### The featured Dishcloth patterns:
 
 Dishcloth and Tea Towel – A simple and elegant set that blends style and function for your daily kitchen needs.
 
@@ -693,7 +737,7 @@ Sunburst Coaster – Radiating texture and cheer, this sunny coaster adds handma
 
 Snowflake Coaster – Delicate and elegant, this winter-themed design adds a touch of seasonal magic to your décor.
 
-Design Highlights:
+##### Design Highlights:
 
 All pattern cards are arranged in a neat two-row, three-column grid.
 
@@ -707,7 +751,7 @@ The tone is cheerful and homey, matching the comforting, everyday nature of dish
 
 This is the "Edit Pattern" section of your crochet website, where you can easily update or refine the details of your crochet patterns. The page has been designed to ensure a smooth and intuitive editing process, all while keeping in line with the clean, inviting aesthetic of the site.
 
-Each section includes:
+##### Each section includes:
 
 Pattern Title: Edit the name of your crochet creation.
 
@@ -725,7 +769,7 @@ Pattern File: Attach or change the pattern if available for download or printing
 
 Image: Update or upload an image that showcases your pattern.
 
-Design Highlights:
+##### Design Highlights:
 
 The page is clean and minimalist, with fields clearly outlined for easy editing.
 
