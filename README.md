@@ -38,6 +38,11 @@ The Crochet Files is a web platform where users can share, explore, and engage w
 - As a user, I want to like crochet projects so that I can show appreciation for others' work.  
 - As a user, I want to comment on crochet projects so that I can ask questions and give feedback.  
 - As a user, I want to delete my comments to remove anything I no longer want to say.  
-- As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.  
+- As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.
+
+#### **Admin & Moderation**  
+- As an admin, I want to manage users so that I can ensure a positive community experience.  
+- As an admin, I want to delete inappropriate projects or comments so that the platform remains safe and friendly.  
+
 
 
