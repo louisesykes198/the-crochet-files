@@ -599,6 +599,41 @@ The tone is cheerful and homey, matching the comforting, everyday nature of dish
 
 ![image](docs/dish-page.png)
 
+#### **Edit Project Page**
+
+This is the "Edit Pattern" section of your crochet website, where you can easily update or refine the details of your crochet patterns. The page has been designed to ensure a smooth and intuitive editing process, all while keeping in line with the clean, inviting aesthetic of the site.
+
+Each section includes:
+
+Pattern Title: Edit the name of your crochet creation.
+
+Category: Choose the most fitting category for your pattern, such as Blankets, Scarves, or Dishcloths.
+
+Description: Add or update a friendly, short description that highlights the details of your pattern.
+
+Skill Level: Adjust the difficulty level to guide crocheters of all abilities.
+
+Materials Needed: List the yarns, hooks, and any additional supplies required.
+
+Notes: Include any important tips or special instructions for makers.
+
+Pattern File: Attach or change the pattern if available for download or printing.
+
+Image: Update or upload an image that showcases your pattern.
+
+Design Highlights:
+
+The page is clean and minimalist, with fields clearly outlined for easy editing.
+
+All updates are immediately visible, with an option to preview changes before finalizing.
+
+The soft pastel theme creates a welcoming, user-friendly interface that aligns with the overall aesthetic of the site.
+
+Once you’ve made your changes, don’t forget to save and share your updated creation with the crochet community!
+
+![image](docs/edit-page.png)
+
+
 
 
 
