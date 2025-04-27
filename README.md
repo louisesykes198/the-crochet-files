@@ -32,6 +32,12 @@ The Crochet Files is a web platform where users can share, explore, and engage w
 #### **Browsing & Filtering**  
 - As a user, I want to browse crochet projects so that I can find inspiration.  
 - As a user, I want to filter crochet projects by category and difficulty level so that I can find patterns that match my skill level.  
-- As a user, I want to search for crochet projects by keywords so that I can find specific patterns or techniques.  
+- As a user, I want to search for crochet projects by keywords so that I can find specific patterns or techniques.
+
+#### **Engagement & Interaction**  
+- As a user, I want to like crochet projects so that I can show appreciation for others' work.  
+- As a user, I want to comment on crochet projects so that I can ask questions and give feedback.  
+- As a user, I want to delete my comments to remove anything I no longer want to say.  
+- As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.  
 
 
