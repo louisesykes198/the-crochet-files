@@ -912,6 +912,188 @@ Accessible Forms: All forms — including login, registration, project submissio
 
 By implementing these features, The Crochet Files aims to provide a welcoming and accessible experience for all users, regardless of ability.
 
+## 🗄️ Database & Backend  
+
+### **Data Structure & Relationships** 
+
+##### Database Design for Crochet Files
+
+The database for Crochet Files was designed with efficiency and user-friendliness in mind. The design process was carried out in three key phases:
+
+Requirements Analysis – Identifying the Purpose of the Database
+
+Organizing Data into Tables – Determining the Database Structure
+
+Normalizing – Standardizing the Tables
+
+1. Requirements Analysis – Defining the Purpose of the Database
+   
+In this phase, we focused on understanding the core purpose of the Crochet Files platform. The goal was to create a space where users can share crochet projects, interact through comments and likes, and explore projects organized by category and difficulty.
+
+Key requirements identified through user research and interviews included:
+
+Project Details: Each crochet project should include a title, description, images, and category.
+
+User Interactions: Users must be able to like and comment on projects.
+
+Categorization: Crochet projects should be organized into categories (e.g., blankets, scarves, hats).
+
+User Authentication: Only registered users should be able to like, comment, and upload projects.
+
+2. Organizing Data into Tables – Structuring the Database
+   
+Once the requirements were gathered, we translated them into a database structure. The core entities were identified, and their relationships mapped into database tables.
+
+##### Core Entities:
+Users: Stores user details and authentication information.
+
+Crochet Files (Projects): Contains details like title, description, images, and category.
+
+Categories: Organizes crochet projects into predefined types.
+
+Comments: Allows users to comment on projects.
+
+Likes: Tracks which users have liked, which projects.
+
+Each entity corresponds to a database table:
+
+User Table: Contains fields for user details (username, email, password).
+
+Crochet File Table: Stores project details, category reference, user (creator), and images.
+
+Category Table: Contains category names and descriptions.
+
+Comment Table: Links users to crochet projects, storing the comment content.
+
+Like Table: Links users to crochet projects for tracking likes.
+
+##### Relationships:
+##### One-to-Many:
+
+A user can create many crochet files.
+
+A category can have many crochet files.
+
+##### Many-to-Many:
+
+A user can like many crochet files, and a crochet file can be liked by many users (handled via the Like table).
+
+This structure ensures that the data is organized efficiently and can scale easily as the platform grows.
+
+3. Normalizing – Ensuring Database Integrity
+Normalization was carried out to prevent data redundancy and maintain database integrity. The database was normalized to the third normal form (3NF):
+
+First Normal Form (1NF): Ensures atomic values in all fields (no repeating groups).
+
+Second Normal Form (2NF): Eliminates partial dependencies, ensuring all non-key attributes depend fully on the primary key.
+
+Third Normal Form (3NF): Removes transitive dependencies, ensuring that non-key attributes do not depend on other non-key attributes.
+
+For example, category data is stored once in the Category table, and user information is referenced using foreign keys in the Crochet Files, Comments, and Likes tables.
+
+##### Backend Architecture
+Overview of the Backend
+The backend for Crochet Files uses Django and Python, with PostgreSQL as the database. We integrated Cloudinary for image hosting and deployed the app on Heroku.
+
+##### Framework and Tools:
+Django: Chosen for its built-in admin interface, powerful ORM, and security features.
+
+Gunicorn: For running the application server on Heroku.
+
+Cloudinary: For secure and scalable image uploads.
+
+Heroku: For hosting and deployment management.
+
+##### Models
+Key Models:
+User: Customization of Django’s built-in User model for user authentication.
+
+CrochetFile (Project): Stores details about each crochet project.
+
+Category: Categorizes crochet projects (e.g., blankets, scarves).
+
+Comment: Stores user comments on projects.
+
+Like: Tracks which users have liked, which crochet projects.
+
+##### Field Types:
+CharField: Used for names and titles.
+
+TextField: For project descriptions.
+
+ImageField: Used for uploading images to Cloudinary.
+
+ForeignKey: Links to related models (User, Category).
+
+ManyToManyField: Handles the many-to-many relationship between users and projects through the Like model.
+
+##### Relationships:
+One-to-Many:
+
+Users can create many crochet files.
+
+Categories can have many crochet files.
+
+Many-to-Many:
+
+Users can like many crochet files, and a crochet file can be liked by many users (via the Like table).
+
+##### Database Design & Schema
+Each Django model directly maps to a PostgreSQL table. We’ve optimized performance by:
+
+Adding indexes on frequently queried fields (e.g., username, project title).
+
+Using related_name for clear reverse relationships.
+
+Applying normalization best practices to prevent data duplication.
+
+##### Views & URLs
+Views:
+CRUD (Create, Read, Update, Delete) operations are implemented for Crochet Files, Comments, and Likes.
+
+##### URL Routing:
+URLs are structured clearly for easy navigation, such as:
+
+/files/ – List all crochet files.
+
+/files/category/<slug>/ – List crochet files by category.
+
+Each URL maps to a specific view function or class-based view.
+
+##### User Authentication & Authorization
+Django’s User System: Handles registration, login, and logout with secure password hashing.
+
+###### Permissions:
+
+Only authenticated users can upload projects, comment, and like files.
+
+Anonymous users can browse but cannot interact.
+
+##### Security
+Data Security:
+
+Passwords are securely hashed.
+
+SSL/HTTPS is enforced via Heroku settings.
+
+Cloudinary media uploads are securely authenticated.
+
+##### Input Validation:
+
+Django’s built-in protections against SQL injection, XSS, and CSRF.
+
+Custom validation for user-uploaded content and form inputs.
+
+##### Deployment
+Hosting: The backend is hosted on Heroku. Environment variables (e.g., SECRET_KEY, DATABASE_URL) are securely stored using Heroku’s config vars.
+
+Database Hosting: PostgreSQL is provided through Heroku’s add-ons.
+
+Scalability: The app is ready for scaling with additional dynos and optimized database queries.
+
+##### Logging & Monitoring
+Error Tracking: We plan to integrate Sentry or a similar service for enhanced error monitoring.
+
 
 
 
