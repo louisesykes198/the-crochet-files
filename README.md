@@ -247,7 +247,23 @@ Main Content – Category Grid
 - The content is displayed in a 3-column grid layout, with two rows.
 - Each category is shown inside a rounded rectangle box with:
 - A high-quality image of the crochet item.
-- The name of the category centered beneath the image in a clean, sans-serif font.
+- The name of the category is centered beneath the image in a clean, sans-serif font.
+
+### **Images & Visuals**  
+
+#### **Registration Page**
+
+Welcome to the registration page for The Crochet Nook! Here, new users can create a personal account to start sharing their crochet projects, explore others’ work, and connect with a creative community.
+
+The registration form includes fields for a username, a secure password, and password confirmation. Helpful password guidelines are listed to ensure your account stays safe.
+
+At the top, the navigation bar allows quick access to key areas of the site:
+
+Home, Add Project, Crochet Projects, Login and Register
+
+The page design keeps a soft, welcoming tone with a light blue background, easy-to-read fonts, and a simple, user-friendly layout—just like a cozy crochet nook!
+
+![image](docs/reg-page.png)
 
 
 
