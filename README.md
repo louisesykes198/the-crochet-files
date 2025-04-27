@@ -191,5 +191,12 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 <img src="docs/tablet-edit.png" alt="Edit Page">
 </details>
 
+## 🎨 Design & Branding  
+
+### **Logo**
+
+The logo features the text "The Crochet Nook" written in a stylish, handwritten script font that gives off a cozy and personal feel. The text is in black against a light blue background, enhancing readability while maintaining a soft, welcoming aesthetic. The playful and artistic style of the font conveys a sense of creativity, fitting well with the handmade, crafty vibe typically associated with crochet.
+
+![image](docs/logo.png)
 
 
