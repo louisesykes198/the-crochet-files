@@ -265,5 +265,24 @@ The page design keeps a soft, welcoming tone with a light blue background, easy-
 
 ![image](docs/reg-page.png)
 
+#### **Login Page**
+
+The login page for The Crochet Nook allows returning users to securely sign in to their account. With a simple form layout, users can enter their username and password to access their crochet projects, add new creations, or interact with the crafting community.
+
+Helpful navigation links are available in the top right corner, making it easy to:
+
+- Home page
+
+- Browse Crochet Projects
+
+- Add a new project
+
+- Register a new account
+
+The gentle blue background and clean design make for a peaceful, user-friendly login experience—perfectly matching the warm, handmade vibe of the crochet world.
+
+![image](docs/login-page.png)
+
+
 
 
