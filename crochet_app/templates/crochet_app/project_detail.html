@@ -3,21 +3,25 @@
 {% block content %}
 <div class="container mt-4">
     <!-- Project Card -->
-    <div class="card shadow-lg">
-        <div class="row g-0">
+    <div class="card shadow-lg project-detail-card">
+        <div class="row g-0" style="height: 100%;">
             <!-- Project Image -->
-            {% if project.image %}
-            <picture>
-                <source srcset="{{ project.image.url|cut:'.png' }}.webp" type="image/webp">
-                <img src="{{ project.image.url }}" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="{{ project.name }}" loading="lazy">
-            </picture>
-        {% else %}
-            <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="No image available">
-        {% endif %}
+            <div class="col-md-5" style="height: 100%;">
+                {% if project.image %}
+                    <picture>
+                        <source srcset="{{ project.image.url|cut:'.png' }}.webp" type="image/webp">
+                        <img src="{{ project.image.url }}" class="img-fluid project-detail-image"
+                             alt="{{ project.name }}" loading="lazy">
+                    </picture>
+                {% else %}
+                    <img src="https://via.placeholder.com/400" class="img-fluid project-detail-image"
+                         alt="No image available">
+                {% endif %}
+            </div>
 
             <!-- Project Details -->
             <div class="col-md-7 d-flex align-items-center">
-                <div class="card-body">
+                <div class="card-body project-detail-body">
                     <h1 class="text-center mb-4" style="font-size: 2.5rem;">{{ project.name }}</h1>
 
                     <p><strong>Category:</strong> {{ project.category }}</p>
@@ -26,7 +30,8 @@
                     <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
 
                     {% if project.pattern %}
-                        <a href="{{ project.pattern.url }}" class="btn btn-primary my-3" download download target="_blank">View/Download Pattern</a>
+                    <a href="{{ project.pattern.url }}" class="btn btn-primary mt-3">View/Download Pattern</a>
+
                     {% endif %}
 
                     <!-- Like Button -->
@@ -64,8 +69,7 @@
                     rows="4" 
                     class="form-control" 
                     style="border: 2px dashed #f8dbdb; border-radius: 10px; background-color: #fffdfd;"
-                    placeholder="Write your comment here..."
-                ></textarea>
+                    placeholder="Write your comment here..."></textarea>
                 <button type="submit" name="comment" value="comment" class="btn btn-primary mt-3">Post Comment</button>
             </form>
         {% else %}
@@ -74,6 +78,8 @@
     </div>
 </div>
 {% endblock %}
+
+
 
 
 
