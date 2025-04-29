@@ -4,6 +4,7 @@
 
 ### **Project Overview**  
 The Crochet Files is a web platform where users can share, explore, and engage with crochet projects.  
+*Crochet Files is a full-stack Django application designed for scalability, with ongoing feature development to enhance user engagement and platform functionality.*
 
 ### **Goals & Challenges**  
 - Create a user-friendly space for crochet enthusiasts.  
@@ -1093,6 +1094,26 @@ Scalability: The app is ready for scaling with additional dynos and optimized da
 
 ##### Logging & Monitoring
 Error Tracking: We plan to integrate Sentry or a similar service for enhanced error monitoring.
+
+## Future Features
+
+To further improve **Crochet Files**, the following features are planned:
+
+- **👤 User Profiles:** Personalized pages showing each user's uploaded files, likes, and comments.
+- **🔒 Password Recovery:** "Forgot Password" functionality with secure email reset.
+- **🔍 Search & Filters:** Quick search and advanced filtering by category, title, or difficulty.
+- **⭐ Favorites:** Option to save favorite crochet files for easy access later.
+- **🔔 Notifications:** Alerts for likes, comments, and new uploads from followed users.
+- **🛠️ Admin Tools:** Backend dashboard for managing users, projects, and content.
+- **📤 Social Sharing:** Easy sharing of crochet files to platforms like Pinterest and Instagram.
+
+These enhancements aim to make Crochet Files a more interactive, user-friendly, and inspiring community for crochet enthusiasts.
+
+### Project Status
+
+Crochet Files is fully functional and has core features in place.  
+Future updates will focus on enhancing user experience, adding social and profile features, and scaling for growth.
+
 
 
 
