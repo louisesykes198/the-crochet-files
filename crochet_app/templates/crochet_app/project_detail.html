@@ -6,13 +6,14 @@
     <div class="card shadow-lg">
         <div class="row g-0">
             <!-- Project Image -->
-            <div class="col-md-5">
-                {% if project.image %}
-                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="{{ project.name }}">
-                {% else %}
-                    <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="No image available">
-                {% endif %}
-            </div>
+            {% if project.image %}
+            <picture>
+                <source srcset="{{ project.image.url|cut:'.png' }}.webp" type="image/webp">
+                <img src="{{ project.image.url }}" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="{{ project.name }}" loading="lazy">
+            </picture>
+        {% else %}
+            <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" style="height: 100%; width: 100%; object-fit: cover;" alt="No image available">
+        {% endif %}
 
             <!-- Project Details -->
             <div class="col-md-7 d-flex align-items-center">

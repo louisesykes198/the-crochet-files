@@ -9,7 +9,12 @@
     <div class="col-md-4 mb-4 d-flex">
         <div class="card project-card w-100">
             {% if project.image %}
-                <img src="{{ project.image.url }}" class="card-img-top project-image" alt="{{ project.name }}">
+                <picture>
+                    <!-- WebP format for modern browsers -->
+                    <source srcset="{{ project.image.url }}?f_webp" type="image/webp">
+                    <!-- Fallback to original format for older browsers -->
+                    <img src="{{ project.image.url }}" class="card-img-top project-image" alt="{{ project.name }}">
+                </picture>
             {% else %}
                 <img src="https://via.placeholder.com/300x250" class="card-img-top project-image" alt="No image available">
             {% endif %}
