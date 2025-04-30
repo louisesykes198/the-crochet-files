@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load image_filters %}
 
 {% block content %}
 <div class="container mt-4">
@@ -8,11 +9,10 @@
             <!-- Project Image -->
             <div class="col-md-5" style="height: 100%;">
                 {% if project.image %}
-                    <picture>
-                        <source srcset="{{ project.image.url|cut:'.png' }}.webp" type="image/webp">
-                        <img src="{{ project.image.url }}" class="img-fluid project-detail-image"
-                             alt="{{ project.name }}" loading="lazy">
-                    </picture>
+                <picture>
+                    <source srcset="{{ project.image.url|webp_path }}" type="image/webp">
+                    <img src="{{ project.image.url }}" class="img-fluid project-detail-image" alt="{{ project.name }}" loading="lazy">
+                </picture>
                 {% else %}
                     <img src="https://via.placeholder.com/400" class="img-fluid project-detail-image"
                          alt="No image available">
