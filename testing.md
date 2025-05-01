@@ -76,5 +76,9 @@ The following features were manually tested across desktop and mobile devices:
 | 📱 Mobile Responsiveness  | Pages adapt correctly to smaller screen sizes          | ✅ Pass   |
 | 🧭 Navbar Functionality   | All links and dropdowns navigate correctly             | ✅ Pass   |
 
+## Debug Off
 
+The project uses an option called DEBUG to help keep the site safe when it is live. This is disabled in production so that sensitive data is not displayed if an issue occurs. When DEBUG is turned off, additional security options are enabled, such as mandating HTTPS and protecting cookies. These help to keep user data protected. When working locally on your PC (DEBUG enabled), these options are disabled to make testing and development easier.
+
+![image](docs/debug-two.png) ![image](docs/debug-one.png)
 
