@@ -33,12 +33,15 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Added with the help of ChatGPT
+# Set DEBUG mode based on an environment variable
 DEBUG = os.getenv("DEBUG", "False") == "True"
 print("DEBUG is:", DEBUG)
+
+# Allowed hosts for development and production
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
+    '127.0.0.1',                             
+    'localhost',                             
     'crochet-files-84195481b131.herokuapp.com',  
 ]
 
@@ -135,13 +138,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Static files storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-# Security Settings
+# Added with the help of ChatGPT
+# Security settings only enabled in production (when DEBUG is False) 
 if not DEBUG:
-    
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True             
+    SESSION_COOKIE_SECURE = True           
+    CSRF_COOKIE_SECURE = True              
+
     LOGGING = {
         'version': 1,
         'disable_existing_loggers': False,
@@ -152,11 +155,12 @@ if not DEBUG:
         },
         'root': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'DEBUG',             
         },
     }
+
 else:
-    # Local Development-specific settings
+    # Local development settings - HTTPS security not needed on localhost
     SECURE_SSL_REDIRECT = False  
     SESSION_COOKIE_SECURE = False  
     CSRF_COOKIE_SECURE = False  
