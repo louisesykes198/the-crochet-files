@@ -94,3 +94,34 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ![image](docs/css-vail.png)
 
+## Python Validators
+
+[CI Python Linter Validator](https://pep8ci.herokuapp.com/)
+
+### Admion.py
+
+![image](docs/admin.png)
+
+### Apps.py
+
+![image](docs/apps.png)
+
+### Forms.py
+
+![image](docs/forms.png)
+
+### Models.py
+
+![image](docs/models.png)
+
+### Urls.py
+
+![image](docs/urls.png)
+
+### Views.py
+
+![image](docs/views.png)
+
+
+
+
