@@ -78,7 +78,19 @@ The following features were manually tested across desktop and mobile devices:
 
 ## Debug Off
 
-The project uses an option called DEBUG to help keep the site safe when it is live. This is disabled in production so that sensitive data is not displayed if an issue occurs. When DEBUG is turned off, additional security options are enabled, such as mandating HTTPS and protecting cookies. These help to keep user data protected. When working locally on your PC (DEBUG enabled), these options are disabled to make testing and development easier.
+The project uses an option called DEBUG to help keep the site safe when it is live. This is disabled in production so that sensitive data is not displayed if an issue occurs. Additional security options are enabled when DEBUG is turned off, such as mandating HTTPS and protecting cookies. These help to keep user data protected. When working locally on your PC (DEBUG enabled), these options are disabled to make testing and development easier.
 
 ![image](docs/debug-two.png) ![image](docs/debug-one.png)
+
+# 🧰 Validators
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+
+[W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+![image](docs/base-html-vali.png)
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+![image](docs/css-vail.png)
 
