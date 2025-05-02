@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
+
 class Project(models.Model):
     # Choices for category
     CATEGORY_CHOICES = [
@@ -22,44 +23,50 @@ class Project(models.Model):
     ]
 
     name = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)  
+    description = models.TextField(blank=True, null=True)
     category = models.CharField(
         max_length=100,
-        choices=CATEGORY_CHOICES,  
+        choices=CATEGORY_CHOICES,
     )
     skill_level = models.CharField(
         max_length=50,
-        choices=SKILL_LEVEL_CHOICES,  
+        choices=SKILL_LEVEL_CHOICES,
     )
     materials_needed = models.TextField()
-    notes = models.TextField(blank=True, null=True)  
+    notes = models.TextField(blank=True, null=True)
 
     # Image and pattern fields
     image = CloudinaryField('image', blank=True, null=True)
     pattern = CloudinaryField('raw', blank=True, null=True)
 
     # ForeignKey relation with the user
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-      
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True
+        )
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
+
 class Comment(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="comments")
+    project = models.ForeignKey(
+        Project, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now)  
+    created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.project.name}"
 
+
 class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  
-    project = models.ForeignKey(Project, on_delete=models.CASCADE,  related_name='likes')  
-    created_at = models.DateTimeField(auto_now_add=True)  
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(
+        Project, on_delete=models.CASCADE,  related_name='likes')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('user', 'project')
@@ -67,17 +74,24 @@ class Like(models.Model):
     def __str__(self):
         return f"Like by {self.user} on {self.project}"
 
+
 class Pattern(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    pattern_file = CloudinaryField('pattern_file', resource_type='raw', blank=True, null=True)
+    pattern_file = CloudinaryField(
+        'pattern_file', resource_type='raw', blank=True, null=True
+        )
 
     def __str__(self):
         return self.name
 
-    def short_description(self):
-        return self.description[:50] + "..." if len(self.description) > 50 else self.description
-   
+def short_description(self):
+    if len(self.description) > 50:
+        return self.description[:50] + "..."
+    else:
+        return self.description
+
+
 class Post(models.Model):
     # … Your other fields for Post model
     author = models.ForeignKey(
