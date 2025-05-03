@@ -94,3 +94,38 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ![image](docs/css-vail.png)
 
+## Python Validators
+
+[CI Python Linter Validator](https://pep8ci.herokuapp.com/)
+
+### Admion.py
+
+![image](docs/admin.png)
+
+### Apps.py
+
+![image](docs/apps.png)
+
+### Forms.py
+
+![image](docs/forms.png)
+
+### Models.py
+
+![image](docs/models.png)
+
+### Urls.py
+
+![image](docs/urls.png)
+
+### Views.py
+
+![image](docs/views.png)
+
+## Further Testing
+
+To ensure cross-browser compatibility, the website was tested across multiple web browsers, including **Google Chrome**, **Microsoft Edge**, and **Safari**. It was also viewed on a range of devices, such as desktop and laptop computers, as well as mobile devices including the **Samsung Galaxy A12**, **Samsung Galaxy S22**, and **iPhone SE**. Additionally, friends and family members were invited to review the website and its documentation to identify potential bugs or user experience issues.
+
+
+
+
