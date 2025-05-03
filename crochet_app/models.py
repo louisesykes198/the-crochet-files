@@ -80,10 +80,15 @@ class Pattern(models.Model):
     description = models.TextField()
     pattern_file = CloudinaryField(
         'pattern_file', resource_type='raw', blank=True, null=True
-        )
+    )
 
     def __str__(self):
         return self.name
+
+    def short_description(self):
+        # Returns the first 50 characters of the description followed by "..." if it's too long
+        return self.description[:50] + "..." if self.description else "No description"
+
 
 def short_description(self):
     if len(self.description) > 50:
