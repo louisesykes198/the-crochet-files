@@ -1,84 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-<div class="container text-center mt-4">
-    <h1>Welcome to The Crochet Files</h1>
-    <p>Select a category to explore:</p>
-
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card">
-                <a href="{% url 'category_view' 'Blanket' %}" class="d-block">
-                    <picture>
-                        <!-- WebP format for modern browsers -->
-                        <source srcset="{% static 'images/blanket.png' %}?f_webp" type="image/webp">
-                        <!-- Fallback to original format for older browsers -->
-                        <img src="{% static 'images/blanket.png' %}" alt="Blanket" class="img-fluid rounded">
-                    </picture>
-                </a>
-                <h3 class="mt-2">Blankets</h3>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card-1">
-                <a href="{% url 'category_view' 'Cardigan' %}" class="d-block">
-                    <picture>
-                        <source srcset="{% static 'images/cardigan.png' %}?f_webp" type="image/webp">
-                        <img src="{% static 'images/cardigan.png' %}" alt="Cardigan" class="img-fluid rounded">
-                    </picture>
-                </a>
-                <h3 class="mt-2">Cardigans</h3>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card-2">
-                <a href="{% url 'category_view' 'Amigurumi' %}" class="d-block">
-                    <picture>
-                        <source srcset="{% static 'images/amigurumi.png' %}?f_webp" type="image/webp">
-                        <img src="{% static 'images/amigurumi.png' %}" alt="Amigurumi" class="img-fluid rounded">
-                    </picture>
-                </a>
-                <h3 class="mt-2">Amigurumi</h3>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card-3">
-                <a href="{% url 'category_view' 'Scarves' %}" class="d-block">
-                    <picture>
-                        <source srcset="{% static 'images/scarves.png' %}?f_webp" type="image/webp">
-                        <img src="{% static 'images/scarves.png' %}" alt="Scarves" class="img-fluid rounded">
-                    </picture>                  
-                </a>
-                <h3 class="mt-2">Scarves</h3>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card-4">
-                <a href="{% url 'category_view' 'Hat' %}" class="d-block">
-                    <picture>
-                        <source srcset="{% static 'images/hats.png' %}?f_webp" type="image/webp">
-                        <img src="{% static 'images/hats.png' %}" alt="Hat" class="img-fluid rounded">
-                    </picture>                   
-                </a>
-                <h3 class="mt-2">Hats</h3>
-            </div>
-        </div>
-        <!-- Dishcloths Category -->
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="category-card-5">
-                <a href="{% url 'category_view' 'Dishcloth' %}" class="d-block">
-                    <picture>
-                        <source srcset="{% static 'images/dishcloths.png' %}?f_webp" type="image/webp">
-                        <img src="{% static 'images/dishcloths.png' %}" alt="Dishcloth" class="img-fluid rounded">
-                    </picture>                    
-                </a>
-                <h3 class="mt-2">Dishcloths</h3>
-            </div>
-        </div>
-    </div>
+<div class="container mt-5">
+    <h2 class="text-center">Login</h2>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
 </div>
 {% endblock %}
+
 
 
 

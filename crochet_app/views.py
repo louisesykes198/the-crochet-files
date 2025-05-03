@@ -85,20 +85,16 @@ def edit_project(request, pk):
 def delete_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
 
-    try:
-        # Check if project has a user and if the logged-in user is the same
-        if project.user == request.user:
-            project.delete()
-            return redirect('project_list')
-        else:
-            return HttpResponse("You do not have permission to delete this project.", status=403)
-    except Project.user.RelatedObjectDoesNotExist:
-        return HttpResponse("This project does not have a user assigned.", status=400)
+    # Check if project has a user assigned
+    if project.user is None:
+        return HttpResponse("This project does not have a user assigned and cannot be deleted.", status=400)
 
-   
-    print(f"Logged-in user: {request.user}")  
-    print(f"Project owner: {project.user}")
-
+    # Check if the logged-in user is the owner of the project
+    if project.user == request.user:
+        project.delete()
+        return redirect('project_list')
+    else:
+        return HttpResponse("You do not have permission to delete this project.", status=403)
 
 # User Registration view
 def register(request):
@@ -135,11 +131,6 @@ def user_login(request):
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
-
-# Project Detail view (likes and comments handling)
-from django.contrib import messages
-from django.shortcuts import get_object_or_404, render, redirect
-from .models import Project, Like, Comment
 
 @login_required
 def project_detail(request, project_id):
