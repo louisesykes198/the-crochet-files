@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 import logging
 import environ
@@ -94,6 +95,10 @@ WSGI_APPLICATION = 'crochetcrafts.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['NAME'] = os.path.join(BASE_DIR, 'test_db.sqlite3')
 
 # CSRF trusted origins (for secure cookies and cross-site protection)
 CSRF_TRUSTED_ORIGINS = [
