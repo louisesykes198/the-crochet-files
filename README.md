@@ -1086,6 +1086,14 @@ Django’s built-in protections against SQL injection, XSS, and CSRF.
 Custom validation for user-uploaded content and form inputs.
 
 ##### Deployment
+
+DEPLOYMENT
+Please refer to the DEPLOYMENT.md file for:
+
+Creating the database to be used in production
+Deploying to Heroku
+Setting up Cloudinary for hosting our static and media files
+
 Hosting: The backend is hosted on Heroku. Environment variables (e.g., SECRET_KEY, DATABASE_URL) are securely stored using Heroku’s config vars.
 
 Database Hosting: PostgreSQL is provided through Heroku’s add-ons.
