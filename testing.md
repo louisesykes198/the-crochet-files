@@ -169,7 +169,7 @@ Ran 3 tests in 0.002s
 OK
 Destroying test database for alias 'default'...
 
-![image](docs\test-all.png)
+![image](docs/test-all.png)
 
 
 
