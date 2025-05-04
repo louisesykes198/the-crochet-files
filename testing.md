@@ -126,6 +126,52 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 To ensure cross-browser compatibility, the website was tested across multiple web browsers, including **Google Chrome**, **Microsoft Edge**, and **Safari**. It was also viewed on a range of devices, such as desktop and laptop computers, as well as mobile devices including the **Samsung Galaxy A12**, **Samsung Galaxy S22**, and **iPhone SE**. Additionally, friends and family members were invited to review the website and its documentation to identify potential bugs or user experience issues.
 
+# Unit Testing
+
+
+## 🧪 Testing
+Unit tests were written using Django’s built-in TestCase class to ensure key functionality works correctly across the application. All tests were run using the command python manage.py test.
+
+### ✅ Tests Overview
+
+**Model Test** – ProjectModelTest
+Verifies that a Project instance can be created successfully and that the name field is stored and retrieved correctly.
+
+**Form Test** – CommentFormTest
+Checks that the CommentForm accepts valid input and passes form validation, ensuring the comment field works as intended.
+
+**Authentication Test** – UserAuthTest
+Confirms that a test user can log in using the login view. It performs a POST request and follows the redirect to ensure a 200 OK status code is returned, indicating a successful login.
+
+**Security Test** – SecurityTest
+Verifies that DEBUG is set to False in a production environment. While DEBUG is currently True during local development, conditional logic is in place to enable important security features in production:
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    ...
+else:
+    # Local development settings
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+This setup ensures HTTPS and secure cookie settings are applied when the project is deployed.
+
+### ✅ Test Results
+All tests passed successfully:
+
+Found 3 test(s).
+Creating test database for alias 'default'...
+...
+Ran 3 tests in 0.002s
+
+OK
+Destroying test database for alias 'default'...
+
+![image](docs\test-all.png)
+
+
 
 
 
