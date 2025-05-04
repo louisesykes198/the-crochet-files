@@ -88,6 +88,22 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
+## HTML Validation Checks
+
+The following pages were checked with an HTML validator, and no errors were found:
+
+| **Page**               | **Checked with HTML Validator with no errors** |
+|------------------------|------------------------------------------------|
+| base.html              | ✅ Yes                                        |
+| home.html              | ✅ Yes                                        |
+| add_comment.html       | ✅ Yes                                        |
+| register.html          | ✅ Yes                                        |
+| login.html             | ✅ Yes                                        |
+| add_project.html       | ✅ Yes                                        |
+| category_view.html     | ✅ Yes                                        |
+| delete_project.html    | ✅ Yes                                        |
+
+
 ![image](docs/base-html-vali.png)
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
