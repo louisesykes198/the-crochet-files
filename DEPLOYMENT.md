@@ -1,8 +1,10 @@
 # 🧶 The Crochet Files
 
-## 🚀 Deployment 
+# 🚀 Deployment 
 
-🚀 Deploying the crochet-files Django App to Heroku
+## 🚀 Heroku Deployment
+
+Deploying the crochet-files Django App to Heroku
 Note: These instructions assume you have a verified Heroku account and an Eco Dynos plan via the GitHub Student Developer Pack.
 
 🛠️ 1. Create a New Heroku App
@@ -82,10 +84,92 @@ Wait for the build to complete. You can monitor progress under the Activity tab.
 ⚙️ 9. Set Up Dyno and Remove Postgres
 Go to the Resources tab.
 
-Ensure at least one Eco Dyno is enabled.
+Could you make sure at least one Eco Dyno is enabled?
 
 If there's a Heroku Postgres add-on (not needed for this project), click the three dots next to it and choose Delete Add-on.
 
 🌍 10. View Your Live App
-Click Open app at the top-right of your dashboard.
+Click the Open app at the top right of your dashboard.
 
+## 📸Cloudinary Integration
+
+This project uses Cloudinary to manage and serve image uploads. Follow these steps to integrate Cloudinary with your Django app:
+
+Install Required Packages
+Install the necessary Python packages:
+pip3 install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15
+(Also run pip install cloudinary if needed)
+
+Add to requirements.txt
+Run: pip3 freeze --local > requirements.txt
+
+Sign Up for Cloudinary
+Create an account at cloudinary.com. Choose "Developer" if asked. Verify your email if required.
+
+Copy the CLOUDINARY_URL
+From your Cloudinary dashboard, copy the API Environment Variable.
+
+Set Environment Variable
+In your env.py, add:
+os.environ.setdefault("CLOUDINARY_URL", "<your copied URL>")
+(Remove CLOUDINARY_URL= from the start of the string and keep it in quotes.)
+
+Update settings.py
+Add the following to INSTALLED_APPS (in this order):
+'django.contrib.staticfiles'
+'cloudinary_storage'
+'django.contrib.sites'
+'django_summernote'
+'cloudinary'
+'blog'
+'about'
+
+Update the Blog Model
+In blog/models.py:
+
+Add: from cloudinary.models import CloudinaryField
+
+Add the image field to your Post model:
+featured_image = CloudinaryField('image', default='placeholder')
+
+Make and Apply Migrations
+Run:
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+Update Template to Display Images
+In blog/templates/blog/index.html, use this inside the .image-container:
+
+django
+Copy
+Edit
+{% if "placeholder" in post.featured_image.url %}
+  <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+{% else %}
+  <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+{% endif %}
+Add {% load static %} at the top of the file.
+
+Prepare for Deployment
+
+Set DEBUG = False in settings.py
+
+Run:
+git add --all
+git commit -m "Enable serving of image files"
+git push origin main
+
+Add CLOUDINARY_URL to Heroku
+In Heroku:
+
+Go to Settings → Reveal Config Vars
+
+Add a new variable:
+Key: CLOUDINARY_URL
+Value: (Paste the same URL from env.py)
+
+Deploy
+In the Deploy tab on Heroku, select the main branch and click Deploy Branch.
+
+Test Your Live App
+Open your deployed app in Heroku. Images should now be served via Cloudinary.
