@@ -1114,6 +1114,44 @@ These enhancements aim to make Crochet Files a more interactive, user-friendly, 
 Crochet Files is fully functional and has core features in place.  
 Future updates will focus on enhancing user experience, adding social and profile features, and scaling for growth.
 
+## Credits
+
+### Code
+
+[Bootstrap5](https://getbootstrap.com/docs/5.3.3/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System.
+
+### Content
+
+The developer wrote all the content.
+
+The learn more page information was created by [chatgpt.com](https://chatgpt.com/)
+
+### Media
+
+All Images were created by the [fontawesome](https://fontawesome.com/)
+
+### Acknowledgements
+
+All images and patterns were from [Love Crafts] (https://www.lovecrafts.com/)
+Barnyard Friends Collection, Snuggle Bunny, Cinnamon Swirl Hat and Scarf Set  By Paintbox Yarns
+Diamond Lattice Blanket By Bernat
+Amigurumi Stitch By Shannen Nicole C
+Pastel Shells Baby Blanket By Vivienne (peach.unicorn) 
+Adult's Crochet Crew Neck Cardigan, Cat & Mouse, Pebbled Texture Crochet Hat By Caron 
+Bumble Bee keyring by Catharina U 
+Beginner Beanie By Caron 
+Peggy Cardigan By Wool and the Gang
+Pikachu By Olka Novytska
+Granny Square Blanket By Annemarie Benthem 
+Iris Cardigan By Adriafil
+
+
+My Mentor for continuous helpful feedback.
+
+Tutor support at Code Institute for their support.
+
+Family and Friends for feedback.
+
 
 
 
