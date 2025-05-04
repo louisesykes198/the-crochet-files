@@ -918,6 +918,52 @@ Accessible Forms: All forms — including login, registration, project submissio
 
 By implementing these features, The Crochet Files aims to provide a welcoming and accessible experience for all users, regardless of ability.
 
+## 🚀 Technologies & Tools Used
+### 🧱 Languages & Technologies
+HTML5
+
+CSS3
+
+Python
+
+Django
+
+Heroku
+
+PostgreSQL
+
+### 🧰 Frameworks, Libraries & Programs
+
+**Bootstrap 5**
+Used to assist with the responsiveness and styling of the website.
+
+**Hover.css**
+Applied to the social media icons in the footer to create a float transition effect on hover.
+
+**Google Fonts**
+Imported the 'Quicksand' font into the style.css file, applied throughout the site.
+
+**Font Awesome**
+Used across all pages for icons that enhance both visual appeal and user experience.
+
+**jQuery**
+Included with Bootstrap to support responsive navbar functionality, and used for the smooth scroll feature.
+
+**Git**
+Used for version control, with commits made via Gitpod and pushed to GitHub.
+
+**GitHub**
+Hosted the project's source code repository after being pushed using Git version control.
+
+**Heroku**
+Used to deploy the live version of the project, making it accessible on the web.
+
+**Balsamiq**
+A low-fidelity wireframing tool used to sketch and plan the layout of the site and its components.
+
+**Lucidchart**
+Used to create flowcharts, diagrams, and wireframes to visually map out the project’s structure and logic.
+
 ## 🗄️ Database & Backend  
 
 ### **Data Structure & Relationships** 
