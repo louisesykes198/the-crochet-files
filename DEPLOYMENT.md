@@ -2,6 +2,56 @@
 
 # 🚀 Deployment 
 
+## 🛠️ Setting Up PostgreSQL
+
+To configure your Django project to use PostgreSQL instead of SQLite, follow these steps:
+
+1. Install PostgreSQL Adapter
+
+Install the PostgreSQL adapter by adding psycopg2-binary to your project dependencies.After installation, make sure to update your requirements.txt file by running:
+
+pip freeze > requirements.txt
+
+2. Update settings.py
+
+In your Django settings.py, import the necessary modules at the top of the file:
+
+import dj_database_url
+import os
+
+Replace the existing DATABASES configuration with:
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
+}
+
+This setup will allow Django to use the DATABASE_URL environment variable to connect to your PostgreSQL database.
+
+3. Create and Set Your Environment Variable
+
+If working locally, create a .env file and add the following:
+
+DATABASE_URL=postgres://yourusername:yourpassword@yourhost:5432/yourdatabase
+
+Make sure this .env file is not committed to version control by adding it to your .gitignore.
+
+4. Run Migrations
+
+Once your database is connected, apply migrations:
+
+python manage.py migrate
+
+This will set up your database schema using PostgreSQL.
+
+5. Ready for Deployment
+
+Once your PostgreSQL database is working locally, follow the steps in the Heroku Deployment section to complete deployment using Heroku's PostgreSQL add-on.
+
+
+
 ## 🚀 Heroku Deployment
 
 Deploying the crochet-files Django App to Heroku
