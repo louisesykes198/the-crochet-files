@@ -122,6 +122,10 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ![image](docs/views.png)
 
+### Test.py
+
+![image](docs/test-all-vali.png)
+
 ## Further Testing
 
 To ensure cross-browser compatibility, the website was tested across multiple web browsers, including **Google Chrome**, **Microsoft Edge**, and **Safari**. It was also viewed on a range of devices, such as desktop and laptop computers, as well as mobile devices including the **Samsung Galaxy A12**, **Samsung Galaxy S22**, and **iPhone SE**. Additionally, friends and family members were invited to review the website and its documentation to identify potential bugs or user experience issues.
