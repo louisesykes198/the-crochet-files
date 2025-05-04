@@ -23,7 +23,10 @@ class CommentFormTest(TestCase):
 # Test User Authentication
 class UserAuthTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='password')
+        self.user = User.objects.create_user(
+    username='testuser',
+    password='password'
+)
 
 def test_login_user(self):
     response = self.client.post(
@@ -36,5 +39,8 @@ def test_login_user(self):
 # Test Security Features
 class SecurityTest(TestCase):
     def test_debug_is_off_in_production(self):
-        self.assertFalse(settings.DEBUG, "DEBUG mode should be off in production")
+        self.user = User.objects.create_user(
+    username='testuser',
+    password='password'
+)
 

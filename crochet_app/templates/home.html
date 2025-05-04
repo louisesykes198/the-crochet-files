@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 
 {% block content %}
 <div class="container text-center mt-4">
@@ -10,11 +11,13 @@
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="category-card">
                 <a href="{% url 'category_view' 'Blanket' %}" class="d-block">
-                    <img src="{% static 'images/blanket.webp' %}" alt="Blanket" class="img-fluid rounded">
-                </a>
+                    <a href="{% url 'category_view' 'Blanket' %}" class="d-block">
+                        <img src="{% static 'images/blanket.webp' %}" alt="Blanket" class="img-fluid rounded">
+                    </a>
                 <h3 class="mt-2">Blankets</h3>
             </div>
         </div>
+
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="category-card-1">
                 <a href="{% url 'category_view' 'Cardigan' %}" class="d-block">
@@ -55,9 +58,12 @@
                 </a>
                 <h3 class="mt-2">Dishcloths</h3>
             </div>
-        </div>
+        </div>        
     </div>
 </div>
 {% endblock %}
+
+
+
 
 
