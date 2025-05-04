@@ -68,6 +68,11 @@ It is a useful tool for enhancing usability, streamlining navigation, and spotti
 <img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
 </details> 
 
+<details>
+<summary>ERD</summary>
+<img src="docs/ERD image.png" alt="ERD">
+</details> 
+
 ### **How Users Move Through the Site**  
 
 - Home Page 
