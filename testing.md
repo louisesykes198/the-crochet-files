@@ -4,7 +4,61 @@
 
 The website is fully responsive and has been tested on multiple device sizes.
 
----
+### Testing User Stories 
+
+#### User Authentication & Profiles
+As a user, I want to create an account to access and contribute to crochet patterns.
+
+![image](docs/reg-page.png)
+
+As a user, I want to log in and out securely to protect my account.
+
+![image](docs/login-page.png)
+
+As a user, I want to view crochet patterns shared by others so that I can find inspiration and ideas.
+
+![image](docs/view-pattern.png)
+
+As a user, I want to like and comment on crochet patterns so that I can show appreciation and join the community.
+
+![image](docs/mob-com.png)
+
+#### Project Uploads & Management
+
+As a user, I want to add a new crochet pattern with images and text so that I can share my work with others.
+
+ ![image](docs/add-page.png)
+
+As a user, I want to edit my crochet pattern so that I can make corrections or updates.
+
+![image](docs/edit-page.png)
+
+As a user, I want to delete my crochet pattern so that I can remove content I no longer want to share.
+
+![image](docs/view-buttons.png)
+
+As a user, I want to categorize my crochet patterns so that others can easily find them.
+
+![image](docs/landing-page.png)
+
+#### Engagement & Interaction
+
+As a user, I want to like crochet patterns so that I can show appreciation for others' work.
+
+![image](docs/like-button.png)
+
+As a user, I want to comment on crochet patterns so that I can ask questions and give feedback.
+
+![image](docs/mob-com.png)
+
+As a user, I want to delete my comments to remove anything I no longer want to say.
+
+![image](docs/view-buttons.png)
+
+As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.
+
+![image](docs/one-like.png)
+
 
 ### 🖥️ Desktop View
 
