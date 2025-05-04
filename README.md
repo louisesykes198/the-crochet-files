@@ -1143,6 +1143,25 @@ The learn more page information was created by [chatgpt.com](https://chatgpt.com
 
 All Images were created by the [fontawesome](https://fontawesome.com/)
 
+### 👤Reviews 
+
+**Lindsey** - The layout of the Crochet Files Project site is beautiful and easy to navigate. 
+The minimalist design really lets the patterns shine, and everything is neatly organized into categories. 
+I found what I needed in seconds!
+
+**Sarah M** - From the homepage to the downloads section, everything is thoughtfully laid out. 
+The structure makes it easy to follow a crochet journey, and I loved the featured project highlights on the front page
+
+**Gemma** - Great patterns and very well-organized files. Loved the aesthetic and how easy everything was to download and follow
+
+**Netti** - The site is well-organized and easy to navigate, and I’ve really enjoyed exploring the patterns. 
+That said, I think it would be even better with a user profile option—somewhere to save favorites, track progress, or keep notes. 
+It’s a small thing, but it would make the experience feel more personal
+
+**Sarah R** - The visual layout is creative without being overwhelming. 
+I especially liked the little visual previews of each pattern—made browsing super enjoyable. 
+It’s clear a lot of care went into the design.
+
 ### Acknowledgements
 
 All images and patterns were from [Love Crafts] (https://www.lovecrafts.com/)
