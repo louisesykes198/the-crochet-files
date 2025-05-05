@@ -1,5 +1,9 @@
 # 🧶 The Crochet Files
 
+![image](docs/all-devices-black.png)
+
+[View the live project here.](https://crochet-files-84195481b131.herokuapp.com/)
+
 ## 🏗️ User Experience
 
 ### **Project Overview**  
