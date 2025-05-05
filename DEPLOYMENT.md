@@ -1,5 +1,7 @@
 # 🧶 The Crochet Files
 
+![image](docs/all-devices-black.png)
+
 # 🚀 Deployment 
 
 ## 🛠️ Setting Up PostgreSQL
