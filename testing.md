@@ -1,5 +1,7 @@
 # 🧶 The Crochet Files
 
+![image](docs/all-devices-black.png)
+
 ## 🧪 Testing
 
 The website is fully responsive and has been tested on multiple device sizes.
