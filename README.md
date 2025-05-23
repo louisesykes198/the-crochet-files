@@ -1,5 +1,9 @@
 # 🧶 The Crochet Files
 
+![image](docs/all-devices-black.png)
+
+[View the live project here.](https://crochet-files-84195481b131.herokuapp.com/)
+
 ## 🏗️ User Experience
 
 ### **Project Overview**  
@@ -66,6 +70,11 @@ It is a useful tool for enhancing usability, streamlining navigation, and spotti
 <details>
 <summary>Wireframe Flow Diagram</summary>
 <img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
+</details> 
+
+<details>
+<summary>ERD</summary>
+<img src="docs/ERD image.png" alt="ERD">
 </details> 
 
 ### **How Users Move Through the Site**  
@@ -913,6 +922,52 @@ Accessible Forms: All forms — including login, registration, project submissio
 
 By implementing these features, The Crochet Files aims to provide a welcoming and accessible experience for all users, regardless of ability.
 
+## 🚀 Technologies & Tools Used
+### 🧱 Languages & Technologies
+HTML5
+
+CSS3
+
+Python
+
+Django
+
+Heroku
+
+PostgreSQL
+
+### 🧰 Frameworks, Libraries & Programs
+
+**Bootstrap 5**
+Used to assist with the responsiveness and styling of the website.
+
+**Hover.css**
+Applied to the social media icons in the footer to create a float transition effect on hover.
+
+**Google Fonts**
+Imported the 'Quicksand' font into the style.css file, applied throughout the site.
+
+**Font Awesome**
+Used across all pages for icons that enhance both visual appeal and user experience.
+
+**jQuery**
+Included with Bootstrap to support responsive navbar functionality, and used for the smooth scroll feature.
+
+**Git**
+Used for version control, with commits made via Gitpod and pushed to GitHub.
+
+**GitHub**
+Hosted the project's source code repository after being pushed using Git version control.
+
+**Heroku**
+Used to deploy the live version of the project, making it accessible on the web.
+
+**Balsamiq**
+A low-fidelity wireframing tool used to sketch and plan the layout of the site and its components.
+
+**Lucidchart**
+Used to create flowcharts, diagrams, and wireframes to visually map out the project’s structure and logic.
+
 ## 🗄️ Database & Backend  
 
 ### **Data Structure & Relationships** 
@@ -1137,6 +1192,25 @@ The learn more page information was created by [chatgpt.com](https://chatgpt.com
 ### Media
 
 All Images were created by the [fontawesome](https://fontawesome.com/)
+
+### 👤Reviews 
+
+**Lindsey** - The layout of the Crochet Files Project site is beautiful and easy to navigate. 
+The minimalist design really lets the patterns shine, and everything is neatly organized into categories. 
+I found what I needed in seconds!
+
+**Sarah M** - From the homepage to the downloads section, everything is thoughtfully laid out. 
+The structure makes it easy to follow a crochet journey, and I loved the featured project highlights on the front page
+
+**Gemma** - Great patterns and very well-organized files. Loved the aesthetic and how easy everything was to download and follow
+
+**Netti** - The site is well-organized and easy to navigate, and I’ve really enjoyed exploring the patterns. 
+That said, I think it would be even better with a user profile option—somewhere to save favorites, track progress, or keep notes. 
+It’s a small thing, but it would make the experience feel more personal
+
+**Sarah R** - The visual layout is creative without being overwhelming. 
+I especially liked the little visual previews of each pattern—made browsing super enjoyable. 
+It’s clear a lot of care went into the design.
 
 ### Acknowledgements
 
