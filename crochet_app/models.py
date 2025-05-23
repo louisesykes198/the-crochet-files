@@ -41,8 +41,7 @@ class Project(models.Model):
 
     # ForeignKey relation with the user
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True
-        )
+        User, on_delete=models.CASCADE,)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -86,7 +85,6 @@ class Pattern(models.Model):
         return self.name
 
     def short_description(self):
-        # Returns the first 50 characters of the description followed by "..." if it's too long
         return self.description[:50] + "..." if self.description else "No description"
 
 

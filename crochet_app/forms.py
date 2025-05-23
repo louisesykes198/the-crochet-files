@@ -37,11 +37,10 @@ def clean_pattern(self):
     pattern = self.cleaned_data.get('pattern')
 
     if pattern and hasattr(pattern, 'file'):
-        # Optional: Size check
+       
         if pattern.size > 10 * 1024 * 1024:  # 10MB limit
             raise ValidationError("Pattern file is too large ( > 10MB ).")
 
-        # Extension check (manual instead of using FileExtensionValidator)
         if hasattr(pattern, 'name'):
             if not pattern.name.lower().endswith('.pdf'):
                 raise ValidationError(
@@ -53,21 +52,15 @@ def clean_pattern(self):
 def clean_image(self):
     image = self.cleaned_data.get('image')
 
-    # Only validate if it's a freshly uploaded file
     if image and hasattr(image, 'file'):
-        # Check file size
         if image.size > 5 * 1024 * 1024:
             raise ValidationError(
-                "Image file is too large ( > 5MB ). "
-                "Please upload a smaller image."
+                "Image file is too large ( > 5MB ). Please upload a smaller image."
             )
 
-    if (hasattr(image, 'name') and
-            not image.name.lower().endswith(('.jpg', '.jpeg', '.png'))):
-        raise ValidationError("Only JPG, JPEG, and PNG files are allowed.")
+        if not image.name.lower().endswith(('.jpg', '.jpeg', '.png')):
+            raise ValidationError("Only JPG, JPEG, and PNG files are allowed.")
 
-
-        # Check actual image format
         try:
             img = Image.open(image)
             if img.format.upper() not in ['JPEG', 'PNG']:
@@ -75,9 +68,7 @@ def clean_image(self):
         except Exception as e:
             raise ValidationError(f'Invalid image file: {e}')
 
-    # For already-uploaded Cloudinary images, skip validation
     return image
-    print(f"image type: {type(form.cleaned_data.get('image'))}")
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -95,16 +86,11 @@ class CustomUserCreationForm(UserCreationForm):
                  "A user with that email address already exists.")
         return email
 
-
-from django import forms
-from .models import Comment
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['comment']  # This ensures the form field matches the model's 'comment' field.
+        fields = ['comment']
 
-    # Optionally, you can customize the comment field if needed
     comment = forms.CharField(widget=forms.Textarea, required=True)
 
 

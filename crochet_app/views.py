@@ -49,52 +49,58 @@ def category_view(request, category_name):
     projects = Project.objects.filter(category__iexact=lookup_name)
     return render(request, 'category_view.html', {
         'projects': projects,
-        'category': lookup_name,  # <-- send lookup_name instead
+        'category': lookup_name,
     })
 
 # Add Project view
 @login_required
 def add_project(request):
     if request.method == 'POST':
-        form = ProjectForm(request.POST, request.FILES)  # Make sure request.FILES is passed
+        form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('project_list')
+            project = form.save(commit=False)
+            project.user = request.user
+            project.save()
+            return redirect('project_detail', project_id=project.id)
     else:
         form = ProjectForm()
-        
     return render(request, 'add_project.html', {'form': form})
     
 
 # Edit Project view
 @login_required
 def edit_project(request, pk):
-    project = Project.objects.get(pk=pk)
+    project = get_object_or_404(Project, pk=pk)
+
+    if project.user != request.user:
+        return HttpResponse("You do not have permission to edit this project.", status=403)
+
     if request.method == 'POST':
-        form = ProjectForm(request.POST, request.FILES, instance=project)  # Make sure request.FILES is passed
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
-            return redirect('project_list')
+            return redirect('project_detail', project_id=project.id)
     else:
         form = ProjectForm(instance=project)
 
     return render(request, 'crochet_app/edit_project.html', {'form': form, 'project': project})
+
 
 # Delete Project view
 @login_required
 def delete_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
 
-    # Check if project has a user assigned
-    if project.user is None:
+    # Use user_id to safely check if a user is assigned
+    if project.user_id is None:
         return HttpResponse("This project does not have a user assigned and cannot be deleted.", status=400)
 
-    # Check if the logged-in user is the owner of the project
-    if project.user == request.user:
-        project.delete()
-        return redirect('project_list')
-    else:
+    if project.user != request.user:
         return HttpResponse("You do not have permission to delete this project.", status=403)
+
+    project.delete()
+    return redirect('project_list')
+
 
 # User Registration view
 def register(request):
@@ -187,7 +193,6 @@ def toggle_like(request, project_id):
     like, created = Like.objects.get_or_create(user=request.user, project=project)
 
     if not created:
-        # Like already exists — remove it (i.e., unlike)
         like.delete()
     return redirect('project_detail', project_id=project.id)
 

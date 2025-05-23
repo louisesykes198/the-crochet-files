@@ -4,7 +4,7 @@ from .models import Project, Comment, Like, Pattern
 # Register Comment model
 admin.site.register(Comment)
 
-# Register Like model with customization
+# Register Like model 
 
 
 @admin.register(Like)
@@ -13,8 +13,7 @@ class LikeAdmin(admin.ModelAdmin):
     ordering = ('user',)
     search_fields = ('user__username', 'project__name')
 
-# Register Project model with customization
-
+# Register Project model 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
@@ -23,8 +22,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ('category', 'skill_level')
     ordering = ('-created_at',)
 
-# Register Pattern model with customization
-
+# Register Pattern model 
 
 @admin.register(Pattern)
 class PatternAdmin(admin.ModelAdmin):

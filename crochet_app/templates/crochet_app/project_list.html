@@ -13,7 +13,6 @@
                 <picture>
                     <!-- WebP format for modern browsers -->
                     <source srcset="{{ project.image.url }}?f_webp" type="image/webp">
-                    <!-- Fallback to original format for older browsers -->
                     <img src="{{ project.image.url }}" 
                          class="card-img-top" 
                         alt="{{ project.name }}">

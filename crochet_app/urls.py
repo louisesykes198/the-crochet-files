@@ -19,11 +19,12 @@ urlpatterns = [
         views.edit_project,
         name='edit_project'
     ),
-    path(
-        'projects/<int:project_id>/delete/',
-        views.delete_project,
-        name='delete_project'
-    ),
+    
+path(
+    'projects/<int:project_id>/delete/',
+    views.delete_project,
+    name='delete_project'
+),
 
     # Project detail, comment, like
     path(
@@ -47,7 +48,7 @@ urlpatterns = [
         'category/<str:category_name>/',
         views.category_view, name='category_view'),
 
-    # Auth
+    # Authorisation
     path('register/', register, name='register'),
     path('accounts/login/', LoginView.as_view(), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),

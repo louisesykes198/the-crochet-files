@@ -10,7 +10,6 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 
-                <!-- Render form fields manually for more control -->
                 <div class="form-group mb-4">
                     <label for="{{ form.name.id_for_label }}">Project Name</label>
                     {{ form.name }}
