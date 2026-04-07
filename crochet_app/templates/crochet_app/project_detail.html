@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load image_filters %}
+{% include 'includes/image-references.html' %}
+
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Project Card -->
+    <div class="card shadow-lg project-detail-card">
+        <div class="row g-0" style="height: 100%;">
+            <!-- Project Image -->
+            <div class="col-md-5" style="height: 100%;">
+                {% if project.image %}
+                <picture>
+                    <source srcset="{{ project.image.url|to_webp }}" type="image/webp">
+                    <img src="{{ project.image.url }}" class="img-fluid project-detail-image" alt="{{ project.name }}" loading="lazy">
+                </picture>
+                {% else %}
+                    <img src="https://via.placeholder.com/400" class="img-fluid project-detail-image"
+                         alt="No image available">
+                {% endif %}
+            </div>
+
+            <!-- Project Details -->
+            <div class="col-md-7 d-flex align-items-center">
+                <div class="card-body project-detail-body">
+                    <h1 class="text-center mb-4" style="font-size: 2.5rem;">{{ project.name }}</h1>
+
+                    <p><strong>Category:</strong> {{ project.category }}</p>
+                    <p><strong>Description:</strong> {{ project.description }}</p>
+                    <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
+                    <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
+
+                    {% if project.pattern %}
+                    <a href="{{ project.pattern.url }}" class="btn btn-primary mt-3" target="_blank">View/Download Pattern</a>
+
+                    {% endif %}
+
+                    <!-- Like Button -->
+                    <form method="post" class="my-3">
+                        {% csrf_token %}
+                        <button type="submit" name="like" value="like" class="btn btn-secondary">Like</button>
+                        <span class="ms-2">({{ like_count }} Likes)</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="mt-5">
+        <h2 class="section-title mb-4">Comments:</h2>
+
+        {% for comment in comments %}
+            <div class="comment-box my-3 p-3" style="background: #f0f8ff; border-radius: 10px;">
+                <p><strong>{{ comment.user.username }}</strong> says:</p>
+                <p>{{ comment.comment }}</p>
+                <p class="text-muted" style="font-size: 0.8em;">{{ comment.created_at|date:"M d, Y H:i" }}</p>
+            </div>
+        {% empty %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endfor %}
+
+        <!-- Leave a Comment -->
+        {% if user.is_authenticated %}
+            <h3 class="mt-4">Leave a Comment</h3>
+            <form method="post" class="mt-3">
+                {% csrf_token %}
+                <textarea 
+                    name="comment_text" 
+                    rows="4" 
+                    class="form-control" 
+                    style="border: 2px dashed #f8dbdb; border-radius: 10px; background-color: #fffdfd;"
+                    placeholder="Write your comment here..."></textarea>
+                <button type="submit" name="comment" value="comment" class="btn btn-primary mt-3">Post Comment</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

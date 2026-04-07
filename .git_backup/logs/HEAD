@@ -1,0 +1,7 @@
+7fac5e486e2967c6b4cd9e66e60da7cbafeb5636 033000259f6a887a7818816e89ed892b11efcd68 louisesykes198 <louisesykes198@yahoo.com> 1775560494 +0100	commit: Remove venv from repo
+033000259f6a887a7818816e89ed892b11efcd68 2d5398222fbaf8860ab1b5a7e137597c40a1078e louisesykes198 <louisesykes198@yahoo.com> 1775562157 +0100	commit: Clean up venv and update settings
+2d5398222fbaf8860ab1b5a7e137597c40a1078e 2d5398222fbaf8860ab1b5a7e137597c40a1078e louisesykes198 <louisesykes198@yahoo.com> 1775563002 +0100	reset: moving to HEAD
+2d5398222fbaf8860ab1b5a7e137597c40a1078e ed964e257a34cf380a99996fa1ed0c6b2ace0231 louisesykes198 <louisesykes198@yahoo.com> 1775563031 +0100	commit: Save local changes after fixing venv issue
+ed964e257a34cf380a99996fa1ed0c6b2ace0231 3a1395ffda01187fb33d9bac1c6cb873d30ea899 louisesykes198 <louisesykes198@yahoo.com> 1775563161 +0100	pull origin main --rebase (start): checkout 3a1395ffda01187fb33d9bac1c6cb873d30ea899
+3a1395ffda01187fb33d9bac1c6cb873d30ea899 a7bd4afea33f243665afd3b0e59af80d24c65f9e louisesykes198 <louisesykes198@yahoo.com> 1775563471 +0100	commit: Save work after reset
+a7bd4afea33f243665afd3b0e59af80d24c65f9e af5cf61d65b16e51db2292163d69b5fa75f7944a louisesykes198 <louisesykes198@yahoo.com> 1775563754 +0100	commit: Add Python version for Heroku
